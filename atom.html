@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>SakuraGaara</title>
+  
+  <subtitle>SakuraGaara</subtitle>
+  <link href="/atom.html" rel="self"/>
+  
+  <link href="https://ngames-dev.cn/"/>
+  <updated>2020-05-22T09:13:03.553Z</updated>
+  <id>https://ngames-dev.cn/</id>
+  
+  <author>
+    <name>SakuraGaara</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>k8s局部应用</title>
+    <link href="https://ngames-dev.cn/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/"/>
+    <id>https://ngames-dev.cn/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/</id>
+    <published>2020-05-20T16:00:00.000Z</published>
+    <updated>2020-05-22T09:13:03.553Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一个完成的Deployment&lt;/p&gt;
+&lt;h4 id=&quot;volumes&quot;&gt;&lt;a href=&quot;#volumes&quot; class=&quot;headerlink&quot; title=&quot;volumes&quot;&gt;&lt;/a&gt;volumes&lt;/h4&gt;&lt;p&gt;当Pod中的目录，映射到宿主机时&lt;br&gt;&lt;a href
+      
+    
+    </summary>
+    
+    
+      <category term="kubeadm" scheme="https://ngames-dev.cn/categories/kubeadm/"/>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubeadm安装</title>
+    <link href="https://ngames-dev.cn/2020/05/21/2020-05-21-kubeadm%E5%AE%89%E8%A3%85/"/>
+    <id>https://ngames-dev.cn/2020/05/21/2020-05-21-kubeadm%E5%AE%89%E8%A3%85/</id>
+    <published>2020-05-20T16:00:00.000Z</published>
+    <updated>2020-05-22T09:13:01.438Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;环境介绍：&quot;&gt;&lt;a href=&quot;#环境介绍：&quot; class=&quot;headerlink&quot; title=&quot;环境介绍：&quot;&gt;&lt;/a&gt;环境介绍：&lt;/h3&gt;&lt;p&gt;192.168.1.20 k8s-master&lt;br&gt;192.168.1.21 k8s-node01&lt;br&gt;192.
+      
+    
+    </summary>
+    
+    
+      <category term="kubeadm" scheme="https://ngames-dev.cn/categories/kubeadm/"/>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flask笔记-SQLAlchemy应用</title>
+    <link href="https://ngames-dev.cn/2020/01/02/2020-01-02-Flask%E7%AC%94%E8%AE%B0-sqlalchemy%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E6%8F%90%E4%BA%A4/"/>
+    <id>https://ngames-dev.cn/2020/01/02/2020-01-02-Flask%E7%AC%94%E8%AE%B0-sqlalchemy%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E6%8F%90%E4%BA%A4/</id>
+    <published>2020-01-01T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.796Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通常情况下，一个简单的注册试图&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy()
+
+class User(db.Model):
+    id = Column(Integer, primary_key=True)
+    nickname = Column(String(24), nullable=False)
+    email = Column(String(50), unique=True, nullable=False)
+    password = Column(&amp;#39;password&amp;#39;, String(128), nullable=False)
+    status = Column(SmallInteger, default=1)
+
+@web.route(&amp;#39;/register&amp;#39;,methods=[&amp;#39;GET&amp;#39;,&amp;#39;POST&amp;#39;])
+def register():
+    if request.method == &amp;#39;POST&amp;#39;:
+        user=User()
+        user.nickname = request.args[&amp;#39;nickname&amp;#39;]
+        user.phone_number = request.args[&amp;#39;phone_number&amp;#39;]
+        db.session.add(user)
+        db.session.commit()
+        redirect(url_for(&amp;#39;web.login&amp;#39;))
+    return render_template(&amp;#39;auth/register.html&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="wtforms" scheme="https://ngames-dev.cn/categories/wtforms/"/>
+    
+    
+      <category term="wtforms" scheme="https://ngames-dev.cn/tags/wtforms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jenkins pipeline</title>
+    <link href="https://ngames-dev.cn/2019/12/10/2019-12-10-Jenkins%20pipeline/"/>
+    <id>https://ngames-dev.cn/2019/12/10/2019-12-10-Jenkins%20pipeline/</id>
+    <published>2019-12-09T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.794Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Jenkins 使用流水线方式部署项目，使发布流程更加清晰透明&lt;br&gt;流水线采用Groovy语言，须安装pipeline插件&lt;br&gt;以下Demo：&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Jenkins" scheme="https://ngames-dev.cn/categories/Jenkins/"/>
+    
+    
+      <category term="Jenkins" scheme="https://ngames-dev.cn/tags/Jenkins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes-Namespace资源限制</title>
+    <link href="https://ngames-dev.cn/2019/11/20/2019-11-20-kubernetes-Namespace%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/"/>
+    <id>https://ngames-dev.cn/2019/11/20/2019-11-20-kubernetes-Namespace%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/</id>
+    <published>2019-11-19T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.795Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://docs.kubernetes.org.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://docs.kubernetes.org.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;创建namespace&quot;&gt;&lt;a href=&quot;#创建namespace&quot; class=&quot;headerlink&quot; title=&quot;创建namespace&quot;&gt;&lt;/a&gt;创建namespace&lt;/h3&gt;&lt;p&gt;命令直接创建&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;kubectl create namespace dev&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或者&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/categories/kubernetes/"/>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes架构</title>
+    <link href="https://ngames-dev.cn/2019/10/31/2019-10-31-Kubernetes%E6%9E%B6%E6%9E%84/"/>
+    <id>https://ngames-dev.cn/2019/10/31/2019-10-31-Kubernetes%E6%9E%B6%E6%9E%84/</id>
+    <published>2019-10-30T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.795Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Kubernetes的总架构图&quot;&gt;&lt;a href=&quot;#Kubernetes的总架构图&quot; class=&quot;headerlink&quot; title=&quot;Kubernetes的总架构图&quot;&gt;&lt;/a&gt;Kubernetes的总架构图&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/img/20191031/kubernetes%E6%9E%B6%E6%9E%84%E5%9B%BE.png&quot; alt=&quot;master的工作流程图&quot;&gt; &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/categories/kubernetes/"/>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>etcd用户及角色权限</title>
+    <link href="https://ngames-dev.cn/2019/10/10/2019-10-10-etcd%E7%94%A8%E6%88%B7%E5%8F%8A%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90/"/>
+    <id>https://ngames-dev.cn/2019/10/10/2019-10-10-etcd%E7%94%A8%E6%88%B7%E5%8F%8A%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90/</id>
+    <published>2019-10-09T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.788Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;etcd用户和角色设置：&lt;br&gt;1.etcd默认没有用户&lt;br&gt;2.etcd默认角色guest和root&lt;br&gt;3.etcd默认关闭用户登录认证&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="etcd" scheme="https://ngames-dev.cn/categories/etcd/"/>
+    
+    
+      <category term="etcd" scheme="https://ngames-dev.cn/tags/etcd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二进制k8s安装部署</title>
+    <link href="https://ngames-dev.cn/2019/08/25/2019-08-25-%E4%BA%8C%E8%BF%9B%E5%88%B6k8s%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/"/>
+    <id>https://ngames-dev.cn/2019/08/25/2019-08-25-%E4%BA%8C%E8%BF%9B%E5%88%B6k8s%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</id>
+    <published>2019-08-24T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.798Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;所有操作全部用root使用者进行，高可用一般建议大于等于3台的奇数,我们使用3台master来做高可用&lt;br&gt;    &lt;strong&gt;k8s各版本组件下载地址:&lt;/strong&gt;&lt;br&gt;    &lt;a href=&quot;https://github.com/kubernetes/kubernetes/tree/v1.14.3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/kubernetes/kubernetes/tree/v1.14.3&lt;/a&gt;&lt;br&gt;    &lt;em&gt;kubernetes:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-node-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-node-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-client-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-client-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-server-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-server-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes.tar.gz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;etcd:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;flannel:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://github.com/coreos/flannel/releases/download/v0.11.0/flannel-v0.11.0-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/coreos/flannel/releases/download/v0.11.0/flannel-v0.11.0-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;cni-plugins:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;docker:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://download.docker.com/linux/static/stable/x86_64/docker-18.09.6.tgz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://download.docker.com/linux/static/stable/x86_64/docker-18.09.6.tgz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;cfssl:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://pkg.cfssl.org/R1.2/cfssl_linux-amd64&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pkg.cfssl.org/R1.2/cfssl_linux-amd64&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64&lt;/a&gt;&lt;br&gt;    &lt;em&gt;heapster:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://github.com/kubernetes-retired/heapster/archive/v1.5.4.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/kubernetes-retired/heapster/archive/v1.5.4.tar.gz&lt;/a&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/categories/kubernetes/"/>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hive添加用户权限</title>
+    <link href="https://ngames-dev.cn/2019/07/02/2019-07-02-hive%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/"/>
+    <id>https://ngames-dev.cn/2019/07/02/2019-07-02-hive%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/</id>
+    <published>2019-07-01T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.789Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;在前面&lt;a href=&quot;https://ngames-dev.cn/2019/06/30/hadoop+hive+hbase%E7%8E%AF%E5%A2%83/&quot;&gt;hadoop+hive+hbase环境&lt;/a&gt;里面，hive部分简单的配置了基于MySQL的本地模式安装&lt;br&gt;但是考虑到安全，需要给hive添加认证登陆&lt;br&gt;而且，使用hive命令beeline链接hive，也是强行需要密码的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在之前的hive-site.xml配置中，&lt;code&gt;hive.server2.authentication&lt;/code&gt; 的配置为NONE，表示没有用户认证。&lt;br&gt;而HiveServer2支持多种用户安全认证方式：NONE,NOSASL, KERBEROS, LDAP, PAM ,CUSTOM等等，在此，我们使用CUSTOM自定义安全认证  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://ngames-dev.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="hive" scheme="https://ngames-dev.cn/tags/hive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop+hive+hbase环境</title>
+    <link href="https://ngames-dev.cn/2019/06/30/2019-06-30-hadoop+hive+hbase%E7%8E%AF%E5%A2%83/"/>
+    <id>https://ngames-dev.cn/2019/06/30/2019-06-30-hadoop+hive+hbase%E7%8E%AF%E5%A2%83/</id>
+    <published>2019-06-29T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.792Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;相关软件准备 apache-hive-2.3.5-bin.tar.gz  hadoop-2.7.7.tar.gz  hbase-1.3.5-bin.tar.gz  mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz  mysql-connector-java-5.1.42-bin.jar  zookeeper-3.4.14.tar.gz&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;环境介绍&quot;&gt;&lt;a href=&quot;#环境介绍&quot; class=&quot;headerlink&quot; title=&quot;环境介绍&quot;&gt;&lt;/a&gt;环境介绍&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;准备三台服务器，修改hostname主机名，分别为master, slave1, slave2,并将三台主机名添加到/etc/hosts中&lt;br&gt;```sh&lt;/li&gt;
+&lt;li&gt;27.214.15 slave1&lt;/li&gt;
+&lt;li&gt;26.234.215 slave2&lt;/li&gt;
+&lt;li&gt;26.108.150 master&lt;br&gt;```&lt;/li&gt;
+&lt;li&gt;准备好相关的安装目录，mkdir /yibao/data/app (所有的项目都会安装在次目录下)&lt;/li&gt;
+&lt;li&gt;配置三台服务器之间无密码登陆
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://ngames-dev.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="hadoop" scheme="https://ngames-dev.cn/tags/hadoop/"/>
+    
+      <category term="hive" scheme="https://ngames-dev.cn/tags/hive/"/>
+    
+      <category term="hbase" scheme="https://ngames-dev.cn/tags/hbase/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx配置url重写</title>
+    <link href="https://ngames-dev.cn/2019/06/06/2019-06-06-nginx%E9%85%8D%E7%BD%AEurl%E9%87%8D%E5%86%99/"/>
+    <id>https://ngames-dev.cn/2019/06/06/2019-06-06-nginx%E9%85%8D%E7%BD%AEurl%E9%87%8D%E5%86%99/</id>
+    <published>2019-06-05T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.785Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;url重写是指通过配置conf文件，以让网站的url中达到某种状态时则定向/跳转到某个规则&lt;br&gt;比如常见的伪静态、301重定向、浏览器定向等&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;rewrite语法&quot;&gt;&lt;a href=&quot;#rewrite语法&quot; class=&quot;headerlink&quot; title=&quot;rewrite语法&quot;&gt;&lt;/a&gt;rewrite语法&lt;/h2&gt;&lt;p&gt;在配置文件的server块中写，如：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;server {
+    rewrite 规则 定向路径 重写类型;
+}&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="nginx" scheme="https://ngames-dev.cn/categories/nginx/"/>
+    
+    
+      <category term="nginx" scheme="https://ngames-dev.cn/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Page添加网易云音乐</title>
+    <link href="https://ngames-dev.cn/2019/04/26/2019-04-26-Git%20Page%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
+    <id>https://ngames-dev.cn/2019/04/26/2019-04-26-Git%20Page%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</id>
+    <published>2019-04-25T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.784Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;添加到 &lt;code&gt;_post.html&lt;/code&gt; 合适的位置 &lt;/li&gt;
+&lt;li&gt;在写好的markdown文档的头文件中添加：&lt;code&gt;music-id: xxx&lt;/code&gt; 配置项。具体的id号就是选取的歌曲的外链中的id号。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;iframe frameborder=&amp;quot;no&amp;quot; border=&amp;quot;0&amp;quot; marginwidth=&amp;quot;0&amp;quot; marginheight=&amp;quot;0&amp;quot; width=330 height=86 src=&amp;quot;//music.163.com/outchain/player?type=2&amp;amp;id={ { page.music-id } }&amp;amp;auto=1&amp;amp;height=66&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="网易云" scheme="https://ngames-dev.cn/categories/%E7%BD%91%E6%98%93%E4%BA%91/"/>
+    
+    
+      <category term="网易云" scheme="https://ngames-dev.cn/tags/%E7%BD%91%E6%98%93%E4%BA%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一图掌握kubernetes客户端命令kubectl</title>
+    <link href="https://ngames-dev.cn/2019/04/26/2019-04-26-%E4%B8%80%E5%9B%BE%E6%8E%8C%E6%8F%A1kubernetes%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%91%BD%E4%BB%A4kubectl/"/>
+    <id>https://ngames-dev.cn/2019/04/26/2019-04-26-%E4%B8%80%E5%9B%BE%E6%8E%8C%E6%8F%A1kubernetes%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%91%BD%E4%BB%A4kubectl/</id>
+    <published>2019-04-25T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.783Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;kubectl客户端命令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://sakuragaara.github.io/images/img/20190426/kubernetes-kubectl-cheatsheet.p
+      
+    
+    </summary>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/categories/kubernetes/"/>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/tags/kubernetes/"/>
+    
+      <category term="kubectl" scheme="https://ngames-dev.cn/tags/kubectl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes Pod控制器</title>
+    <link href="https://ngames-dev.cn/2019/04/23/2019-04-23-kuberneres%20Pod%E6%8E%A7%E5%88%B6%E5%99%A8/"/>
+    <id>https://ngames-dev.cn/2019/04/23/2019-04-23-kuberneres%20Pod%E6%8E%A7%E5%88%B6%E5%99%A8/</id>
+    <published>2019-04-22T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.781Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Pod是kubernetes的最小单元, 自主式创建的Pod删除之后就没有了，但是通过资源控制器创建的Pod如果被删除还会重建&lt;br&gt;  &lt;strong&gt;自主式Pod：&lt;/strong&gt; 创建一个Pod资源清单，&lt;code&gt;kubectl create -f xxxx.yaml&lt;/code&gt;&lt;br&gt;  &lt;strong&gt;资源控制器：&lt;/strong&gt; &lt;code&gt;kubectl run xxxx --image=xxxx --replicas=2 --port=80&lt;/code&gt; 默认属于 &lt;code&gt;deployment&lt;/code&gt;控制器管理&lt;br&gt;  &lt;strong&gt;Pod控制器&lt;/strong&gt;  就是用于实现代替我们去管理pod的中间层，并帮助我们确保每一个Pod资源处于我们所定义或期望的目标状态pod资源出现故障首先要重启，如果一直重启有问题的话会基于某种策略重新编排。自动适应期望pod数量&lt;br&gt;  &lt;strong&gt;&lt;a href=&quot;https://sakuragaara.github.io/kubernetes/2019/04/18/kubernetes-Pod%E8%B5%84%E6%BA%90%E6%B8%85%E5%8D%95%E6%B3%A8%E8%A7%A3/#&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Pod资源清单&lt;/a&gt; 作为模板内嵌在Pod控制器内进行创建&lt;/strong&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/categories/kubernetes/"/>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flask蓝图</title>
+    <link href="https://ngames-dev.cn/2019/04/18/2019-04-18-Flask%E8%93%9D%E5%9B%BE/"/>
+    <id>https://ngames-dev.cn/2019/04/18/2019-04-18-Flask%E8%93%9D%E5%9B%BE/</id>
+    <published>2019-04-17T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.780Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Flask蓝图提供了模块化管理程序路由的功能，使程序结构清晰、简单易懂&lt;br&gt;首先，让我们来看下flask应用与蓝图之间的关系。蓝图代表着应用的一个个功能模块，能做到即插即用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/images/img/2019-04-18-buleprint.png&quot; alt=&quot;buleprint&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;结构&quot;&gt;&lt;a href=&quot;#结构&quot; class=&quot;headerlink&quot; title=&quot;结构&quot;&gt;&lt;/a&gt;结构&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;project
+├── app
+│   ├── __init__.py
+│   └── web
+│       ├── __init__.py
+│       └── login.py
+└── app.py&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="Flask" scheme="https://ngames-dev.cn/categories/Flask/"/>
+    
+    
+      <category term="Flask" scheme="https://ngames-dev.cn/tags/Flask/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes Pod资源清单注解</title>
+    <link href="https://ngames-dev.cn/2019/04/18/2019-04-18-kubernetes%20Pod%E8%B5%84%E6%BA%90%E6%B8%85%E5%8D%95%E6%B3%A8%E8%A7%A3/"/>
+    <id>https://ngames-dev.cn/2019/04/18/2019-04-18-kubernetes%20Pod%E8%B5%84%E6%BA%90%E6%B8%85%E5%8D%95%E6%B3%A8%E8%A7%A3/</id>
+    <published>2019-04-17T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.779Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;创建资源的方法：&lt;br&gt;定义yaml格式提供配置清单,将资源清单提交给apiServer&lt;br&gt;  apiServer可自动将其转换为json格式，而后提交给Scheduler(集群中的调度器)&lt;br&gt;  由Scheduler完成调度，调度目标节点完成创建，并启动相关服务  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Pod核心资源配置清单：&quot;&gt;&lt;a href=&quot;#Pod核心资源配置清单：&quot; class=&quot;headerlink&quot; title=&quot;Pod核心资源配置清单：&quot;&gt;&lt;/a&gt;Pod核心资源配置清单：&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;资源清单定义帮助 &lt;code&gt;kubectl explain&lt;/code&gt; &lt;code&gt;kubectl explain pods&lt;/code&gt; 等查看可嵌套字段  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;apiVersion&quot;&gt;&lt;a href=&quot;#apiVersion&quot; class=&quot;headerlink&quot; title=&quot;apiVersion&quot;&gt;&lt;/a&gt;apiVersion&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;格式为group/version，所属群组版本&lt;br&gt;支持的版本 &lt;code&gt;kubectl api-versions&lt;/code&gt; 可查看  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;kind&quot;&gt;&lt;a href=&quot;#kind&quot; class=&quot;headerlink&quot; title=&quot;kind&quot;&gt;&lt;/a&gt;kind&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;定义资源类别，Pod,Service,Deployment,Event,Secret等(注意大小写)  &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/categories/kubernetes/"/>
+    
+    
+      <category term="kubernetes" scheme="https://ngames-dev.cn/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AWS云搭建安全简单免费的VPN服务</title>
+    <link href="https://ngames-dev.cn/2019/04/16/2019-04-16-AWS%E4%BA%91%E6%90%AD%E5%BB%BA%E5%AE%89%E5%85%A8%E7%AE%80%E5%8D%95%E5%85%8D%E8%B4%B9%E7%9A%84VPN%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://ngames-dev.cn/2019/04/16/2019-04-16-AWS%E4%BA%91%E6%90%AD%E5%BB%BA%E5%AE%89%E5%85%A8%E7%AE%80%E5%8D%95%E5%85%8D%E8%B4%B9%E7%9A%84VPN%E6%9C%8D%E5%8A%A1/</id>
+    <published>2019-04-15T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.782Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Reference resources:&lt;br&gt;&lt;a href=&quot;https://www.webdigi.co.uk/blog/2015/how-to-setup-your-own-private-secure-free-vpn-on-the-amazon-aws-cloud-in-10-minutes/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.webdigi.co.uk/blog/2015/how-to-setup-your-own-private-secure-free-vpn-on-the-amazon-aws-cloud-in-10-minutes/&lt;/a&gt;   &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Creating-your-Private-VPN-Server&quot;&gt;&lt;a href=&quot;#Creating-your-Private-VPN-Server&quot; class=&quot;headerlink&quot; title=&quot;Creating your Private VPN Server&quot;&gt;&lt;/a&gt;Creating your Private VPN Server&lt;/h2&gt;&lt;p&gt;================================&lt;/p&gt;
+&lt;p&gt;1. Setup a free Amazon (AWS) cloud account.&lt;br&gt;Visit &lt;a href=&quot;https://www.webdigi.co.ukhttp://aws.amazon.com/free/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://aws.amazon.com/free/ &lt;/a&gt; and complete the signup. If you already have an Amazon AWS account then please login and follow on.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VPN" scheme="https://ngames-dev.cn/categories/VPN/"/>
+    
+    
+      <category term="vpn" scheme="https://ngames-dev.cn/tags/vpn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx访问控制(持续更新)</title>
+    <link href="https://ngames-dev.cn/2019/04/10/2019-04-10-Nginx%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6(%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0)/"/>
+    <id>https://ngames-dev.cn/2019/04/10/2019-04-10-Nginx%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6(%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0)/</id>
+    <published>2019-04-09T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.778Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;NGINX实现IF语句里的AND，OR多重判断&lt;br&gt;正常清空下使用allow,deny 可以完成，但是对于同时过滤ip和页面，就无法按照正常规则去实现&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Nginx的rewrite规则参考&quot;&gt;&lt;a href=&quot;#Nginx的rewrite规则参考&quot; class=&quot;headerlink&quot; title=&quot;Nginx的rewrite规则参考&quot;&gt;&lt;/a&gt;Nginx的rewrite规则参考&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;~ 为区分大小写匹配&lt;/li&gt;
+&lt;li&gt;~* 为不区分大小写匹配&lt;/li&gt;
+&lt;li&gt;!&lt;del&gt;和!&lt;/del&gt;*分别为区分大小写不匹配及不区分大小写不匹&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Nginx" scheme="https://ngames-dev.cn/categories/Nginx/"/>
+    
+    
+      <category term="nginx" scheme="https://ngames-dev.cn/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云ECS安全基线检查</title>
+    <link href="https://ngames-dev.cn/2019/04/09/2019-04-09-%E9%98%BF%E9%87%8C%E4%BA%91ECS%E5%AE%89%E5%85%A8%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5/"/>
+    <id>https://ngames-dev.cn/2019/04/09/2019-04-09-%E9%98%BF%E9%87%8C%E4%BA%91ECS%E5%AE%89%E5%85%A8%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5/</id>
+    <published>2019-04-08T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.776Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;阿里云ECS安全基线检查&lt;br&gt;Centos6, Centos7&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;文件权限&quot;&gt;&lt;a href=&quot;#文件权限&quot; class=&quot;headerlink&quot; title=&quot;文件权限&quot;&gt;&lt;/a&gt;文件权限&lt;/h3&gt;&lt;p&gt;1, 设置用户权限配置文件的权限&lt;br&gt;描述&lt;br&gt;设置用户权限配置文件的权限&lt;br&gt;加固建议&lt;br&gt;执行以下5条命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;chown root:root /etc/passwd /etc/shadow /etc/group /etc/gshadow
+chmod 0644 /etc/group 
+chmod 0644 /etc/passwd 
+chmod 0400 /etc/shadow 
+chmod 0400 /etc/gshadow&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="安全" scheme="https://ngames-dev.cn/categories/%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="ECS安全" scheme="https://ngames-dev.cn/tags/ECS%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysqlbinlog实时同步至elasticsearch</title>
+    <link href="https://ngames-dev.cn/2019/04/02/2019-04-02-mysqlbinlog%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E8%87%B3elasticsearch/"/>
+    <id>https://ngames-dev.cn/2019/04/02/2019-04-02-mysqlbinlog%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E8%87%B3elasticsearch/</id>
+    <published>2019-04-01T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.767Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;canal从mysql中获取binlog日志信息，输出至kafka，logstash从kafka中获取日志信息，写入elasticsearch&lt;br&gt;不过看起来好像毫无意义,所以做的比较简易&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="elasticsearch" scheme="https://ngames-dev.cn/categories/elasticsearch/"/>
+    
+    
+      <category term="elasticsearch" scheme="https://ngames-dev.cn/tags/elasticsearch/"/>
+    
+      <category term="canal" scheme="https://ngames-dev.cn/tags/canal/"/>
+    
+  </entry>
+  
+</feed>
