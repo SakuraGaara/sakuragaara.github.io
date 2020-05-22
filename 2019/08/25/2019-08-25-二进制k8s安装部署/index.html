@@ -1,0 +1,2449 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="二进制k8s安装部署, SakuraGaara">
+    <meta name="description" content="梦想总是遥不可及，我就是不会放弃！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>二进制k8s安装部署 | SakuraGaara</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">SakuraGaara</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">SakuraGaara</div>
+        <div class="logo-desc">
+            
+            梦想总是遥不可及，我就是不会放弃！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">二进制k8s安装部署</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/kubernetes/">
+                                <span class="chip bg-color">kubernetes</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/kubernetes/" class="post-category">
+                                kubernetes
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-08-25
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>所有操作全部用root使用者进行，高可用一般建议大于等于3台的奇数,我们使用3台master来做高可用<br>    <strong>k8s各版本组件下载地址:</strong><br>    <a href="https://github.com/kubernetes/kubernetes/tree/v1.14.3" target="_blank" rel="noopener">https://github.com/kubernetes/kubernetes/tree/v1.14.3</a><br>    <em>kubernetes:</em><br>    wget <a href="https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-node-linux-amd64.tar.gz" target="_blank" rel="noopener">https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-node-linux-amd64.tar.gz</a><br>    wget <a href="https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-client-linux-amd64.tar.gz" target="_blank" rel="noopener">https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-client-linux-amd64.tar.gz</a><br>    wget <a href="https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-server-linux-amd64.tar.gz" target="_blank" rel="noopener">https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-server-linux-amd64.tar.gz</a><br>    wget <a href="https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes.tar.gz" target="_blank" rel="noopener">https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes.tar.gz</a><br>    <em>etcd:</em><br>    wget <a href="https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz" target="_blank" rel="noopener">https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz</a><br>    <em>flannel:</em><br>    wget <a href="https://github.com/coreos/flannel/releases/download/v0.11.0/flannel-v0.11.0-linux-amd64.tar.gz" target="_blank" rel="noopener">https://github.com/coreos/flannel/releases/download/v0.11.0/flannel-v0.11.0-linux-amd64.tar.gz</a><br>    <em>cni-plugins:</em><br>    wget <a href="https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz" target="_blank" rel="noopener">https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz</a><br>    <em>docker:</em><br>    wget <a href="https://download.docker.com/linux/static/stable/x86_64/docker-18.09.6.tgz" target="_blank" rel="noopener">https://download.docker.com/linux/static/stable/x86_64/docker-18.09.6.tgz</a><br>    <em>cfssl:</em><br>    wget <a href="https://pkg.cfssl.org/R1.2/cfssl_linux-amd64" target="_blank" rel="noopener">https://pkg.cfssl.org/R1.2/cfssl_linux-amd64</a><br>    wget <a href="https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64" target="_blank" rel="noopener">https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64</a><br>    wget <a href="https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64" target="_blank" rel="noopener">https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64</a><br>    <em>heapster:</em><br>    wget <a href="https://github.com/kubernetes-retired/heapster/archive/v1.5.4.tar.gz" target="_blank" rel="noopener">https://github.com/kubernetes-retired/heapster/archive/v1.5.4.tar.gz</a>  </p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="环境准备-Centos7"><a href="#环境准备-Centos7" class="headerlink" title="环境准备 Centos7"></a>环境准备 Centos7</h2><h3 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h3><p>master: kube-apiserver,kube-controller-manager,kube-scheduler,flanneId<br>node: kubelet,kube-proxy,flanneId<br>Service_CIDR: 10.254.0.0/16 服务网段，部署前路由不可达，部署后集群内部使用IP:Port可达<br>Cluster_CIDR：172.30.0.0/16 pod网段，部署前路由不可达，部署后路由可达(flanneld 保证)  </p>
+<table>
+<thead>
+<tr>
+<th>hostname</th>
+<th>IP</th>
+<th>部署软件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>k8s-master1</td>
+<td>192.168.1.31</td>
+<td>etcd+keepalived+haproxy+master</td>
+</tr>
+<tr>
+<td>k8s-master2</td>
+<td>192.168.1.32</td>
+<td>etcd+keepalived+haproxy+master</td>
+</tr>
+<tr>
+<td>k8s-master3</td>
+<td>192.168.1.33</td>
+<td>etcd+keepalived+haproxy+master</td>
+</tr>
+<tr>
+<td>k8s-worker1</td>
+<td>192.168.1.35</td>
+<td>docker+node</td>
+</tr>
+<tr>
+<td>VIP</td>
+<td>192.168.1.10</td>
+<td>VIP</td>
+</tr>
+</tbody></table>
+<h3 id="配置主机环境-etc-hosts，设置master免密登陆"><a href="#配置主机环境-etc-hosts，设置master免密登陆" class="headerlink" title="配置主机环境 /etc/hosts，设置master免密登陆"></a>配置主机环境 /etc/hosts，设置master免密登陆</h3><pre class=" language-sh"><code class="language-sh">
+192.168.1.31 k8s-master1
+192.168.1.32 k8s-master2
+192.168.1.33 k8s-master3</code></pre>
+<h3 id="安装前配置"><a href="#安装前配置" class="headerlink" title="安装前配置"></a>安装前配置</h3><ol>
+<li>禁止selinux,防火墙,swap分区<pre class=" language-sh"><code class="language-sh"></code></pre>
+</li>
+</ol>
+<p>setenforce 0<br>sed -i ‘s/SELINUX=enforcing/SELINUX=disabled/g’ /etc/selinux/config<br>systemctl stop firewalld<br>systemctl disable firewalld<br>swapoff -a</p>
+<pre><code>
+2. 安装软件包
+```sh
+yum -y install ntpdate gcc git vim wget </code></pre><ol start="3">
+<li>时间统一定时更新<pre class=" language-sh"><code class="language-sh"></code></pre>
+</li>
+</ol>
+<p>*/5 * * * * /usr/sbin/ntpdate ntp.api.bz &gt;/dev/null 2&gt;&amp;1</p>
+<pre><code>
+4. 修改文件句柄数
+```sh
+
+cat &lt;&lt;EOF &gt;&gt;/etc/security/limits.conf
+* soft nofile 65536
+* hard nofile 65536
+* soft nproc 65536
+* hard nproc 65536
+* soft  memlock  unlimited
+* hard memlock  unlimited
+EOF</code></pre><ol start="5">
+<li>ipvs安装<pre class=" language-sh"><code class="language-sh"></code></pre>
+</li>
+</ol>
+<p>yum install ipvsadm ipset sysstat conntrack libseccomp -y  </p>
+<pre><code>
+
+6. 开机加载内核模块，并设置开机自动加载
+```sh
+
+cat &gt; /etc/sysconfig/modules/ipvs.modules &lt;&lt;EOF
+#!/bin/bash
+modprobe -- ip_vs
+modprobe -- ip_vs_rr
+modprobe -- ip_vs_wrr
+modprobe -- ip_vs_sh
+modprobe -- nf_conntrack_ipv4
+EOF
+
+#然后执行脚本
+chmod 755 /etc/sysconfig/modules/ipvs.modules &amp;&amp; bash /etc/sysconfig/modules/ipvs.modules
+lsmod | grep -e ip_vs -e nf_conntrack_ipv4</code></pre><ol start="7">
+<li>修改系统参数<pre class=" language-sh"><code class="language-sh">cat <<EOF > /etc/sysctl.d/k8s.conf
+net.ipv4.tcp_keepalive_time = 600
+net.ipv4.tcp_keepalive_intvl = 30
+net.ipv4.tcp_keepalive_probes = 10
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+net.ipv4.neigh.default.gc_stale_time = 120
+net.ipv4.conf.all.rp_filter = 0
+net.ipv4.conf.default.rp_filter = 0
+net.ipv4.conf.default.arp_announce = 2
+net.ipv4.conf.lo.arp_announce = 2
+net.ipv4.conf.all.arp_announce = 2
+net.ipv4.ip_forward = 1
+net.ipv4.tcp_max_tw_buckets = 5000
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_max_syn_backlog = 1024
+net.ipv4.tcp_synack_retries = 2
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.netfilter.nf_conntrack_max = 2310720
+fs.inotify.max_user_watches=89100
+fs.may_detach_mounts = 1
+fs.file-max = 52706963
+fs.nr_open = 52706963
+net.bridge.bridge-nf-call-arptables = 1
+vm.swappiness = 0
+vm.overcommit_memory=1
+vm.panic_on_oom=0
+EOF
+</code></pre>
+</li>
+</ol>
+<p>sysctl –system</p>
+<pre><code>
+8. 预留内存,避免由于内存耗尽导致ssh连不上主机,比如100M，资源充足建议大点
+```sh
+
+echo &#39;vm.min_free_kbytes=100000&#39; &gt;&gt; /etc/sysctl.conf
+sysctl -p</code></pre><h2 id="部署docker"><a href="#部署docker" class="headerlink" title="部署docker"></a>部署docker</h2><ol>
+<li>安装yum源工具包<pre class=" language-sh"><code class="language-sh">yum install -y yum-utils device-mapper-persistent-data lvm2</code></pre>
+</li>
+<li>下载docker-ce官方的yum源配置文件 <pre class=" language-sh"><code class="language-sh">yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</code></pre>
+</li>
+<li>安装docker-ce相应版本<pre class=" language-sh"><code class="language-sh">yum -y install docker-ce.x86_64</code></pre>
+</li>
+<li>配置daemon, 因为kubelet的启动环境变量要与docker的cgroup-driver驱动相同<pre class=" language-sh"><code class="language-sh">mkdir -p /etc/docker && 
+cat > /etc/docker/daemon.json <<EOF
+{
+"exec-opts": ["native.cgroupdriver=systemd"],
+"log-driver": "json-file",
+"log-opts": {
+ "max-size": "100m"
+},
+"storage-driver": "overlay2",
+"storage-opts": [
+ "overlay2.override_kernel_check=true"
+],
+"registry-mirrors": ["https://uyah70su.mirror.aliyuncs.com"]
+}
+EOF</code></pre>
+</li>
+<li>设置开机自启动<pre class=" language-sh"><code class="language-sh">systemctl restart docker && systemctl enable docker && systemctl status docker</code></pre>
+</li>
+</ol>
+<h2 id="部署etcd"><a href="#部署etcd" class="headerlink" title="部署etcd"></a>部署etcd</h2><p>etcd是用来保存集群所有状态的 Key/Value 存储系统，常用于服务发现、共享配置以及并发控制（如 leader 选举、分布式锁等）。kubernetes 使用 etcd 存储所有运行数据。</p>
+<p>所有 Kubernetes 组件会通过 API Server 来跟 Etcd 进行沟通从而保存或读取资源状态。有条件的可以单独几台机器跑,不过需要配置apiserver指向etcd集群。</p>
+<h3 id="安装cfssl"><a href="#安装cfssl" class="headerlink" title="安装cfssl"></a>安装cfssl</h3><pre class=" language-sh"><code class="language-sh">wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 -O /usr/local/bin/cfssl
+wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 -O /usr/local/bin/cfssljson
+wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64 -O /usr/local/bin/cfssl-certinfo
+
+chmod +x /usr/local/bin/cfssl*</code></pre>
+<h3 id="安装配置etcd"><a href="#安装配置etcd" class="headerlink" title="安装配置etcd"></a>安装配置etcd</h3><ol>
+<li>配置etcd证书<pre class=" language-sh"><code class="language-sh">mkdir /root/ssl && cd /root/ssl
+cat >  ca-config.json <<EOF
+{
+"signing": {
+"default": {
+"expiry": "8760h"
+},
+"profiles": {
+"kubernetes": {
+ "usages": [
+     "signing",
+     "key encipherment",
+     "server auth",
+     "client auth"
+ ],
+ "expiry": "8760h"
+}
+}
+}
+}
+EOF
+</code></pre>
+</li>
+</ol>
+<p>cat &gt;  ca-csr.json &lt;&lt;EOF<br>{<br>“CN”: “kubernetes”,<br>“key”: {<br>“algo”: “rsa”,<br>“size”: 2048<br>},<br>“names”: [<br>{<br>  “C”: “CN”,<br>  “ST”: “ShangHai”,<br>  “L”: “ShangHai”,<br>  “O”: “k8s”,<br>  “OU”: “System”<br>}<br>]<br>}<br>EOF</p>
+<p>cat &gt; etcd-csr.json &lt;&lt;EOF<br>{<br>  “CN”: “etcd”,<br>  “hosts”: [<br>    “127.0.0.1”,<br>    “192.168.1.31”,<br>    “192.168.1.32”,<br>    “192.168.1.33”<br>  ],<br>  “key”: {<br>    “algo”: “rsa”,<br>    “size”: 2048<br>  },<br>  “names”: [<br>    {<br>      “C”: “CN”,<br>      “ST”: “ShangHai”,<br>      “L”: “ShangHai”,<br>      “O”: “k8s”,<br>      “OU”: “System”<br>    }<br>  ]<br>}<br>EOF</p>
+<pre><code>
+1. 创建etcd证书
+```sh
+cfssl gencert -initca ca-csr.json | cfssljson -bare ca
+
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes etcd-csr.json | cfssljson -bare etcd
+
+#生产后证书包含文件如下，共9个
+ca-config.json
+ca.csr
+ca-csr.json
+ca-key.pem
+ca.pem
+etcd.csr
+etcd-csr.json
+etcd-key.pem
+etcd.pem</code></pre><ol>
+<li>将生成好的etcd.pem和etcd-key.pem以及ca.pem三个文件拷贝到etcd机器上<pre class=" language-sh"><code class="language-sh">mkdir -p /etc/kubernetes/ssl && cp *.pem /etc/kubernetes/ssl/
+ssh -n 192.168.1.32 "mkdir -p /etc/kubernetes/ssl && exit"
+ssh -n 192.168.1.33 "mkdir -p /etc/kubernetes/ssl && exit"
+</code></pre>
+</li>
+</ol>
+<p>scp -r /etc/kubernetes/ssl/<em>.pem 192.168.1.32:/etc/kubernetes/ssl/<br>scp -r /etc/kubernetes/ssl/</em>.pem 192.168.1.33:/etc/kubernetes/ssl/</p>
+<pre><code>
+1. 配置部署etcd
+```sh
+wget https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz
+tar -zxvf etcd-v3.3.13-linux-amd64.tar.gz
+cp etcd-v3.3.13-linux-amd64/etcd* /usr/local/bin
+scp etcd-v3.3.13-linux-amd64/etcd* 192.168.1.32:/usr/local/bin
+scp etcd-v3.3.13-linux-amd64/etcd* 192.168.1.33:/usr/local/bin</code></pre><ol>
+<li>创建启动配置文件(三台配置文件不同)</li>
+</ol>
+<ul>
+<li>k8s-master1:<pre class=" language-sh"><code class="language-sh">cat <<EOF >/etc/systemd/system/etcd.service
+[Unit]
+Description=Etcd Server
+After=network.target
+After=network-online.target
+Wants=network-online.target
+Documentation=https://github.com/coreos
+</code></pre>
+</li>
+</ul>
+<p>[Service]<br>Type=notify<br>WorkingDirectory=/var/lib/etcd/<br>ExecStart=/usr/local/bin/etcd <br>  –name k8s-master1 <br>  –cert-file=/etc/kubernetes/ssl/etcd.pem <br>  –key-file=/etc/kubernetes/ssl/etcd-key.pem <br>  –trusted-ca-file=/etc/kubernetes/ssl/ca.pem <br>  –peer-cert-file=/etc/kubernetes/ssl/etcd.pem <br>  –peer-key-file=/etc/kubernetes/ssl/etcd-key.pem <br>  –peer-trusted-ca-file=/etc/kubernetes/ssl/ca.pem <br>  –initial-advertise-peer-urls <a href="https://192.168.1.31:2380" target="_blank" rel="noopener">https://192.168.1.31:2380</a> <br>  –listen-peer-urls <a href="https://192.168.1.31:2380" target="_blank" rel="noopener">https://192.168.1.31:2380</a> <br>  –listen-client-urls <a href="https://192.168.1.31:2379,http://127.0.0.1:2379">https://192.168.1.31:2379,http://127.0.0.1:2379</a> <br>  –advertise-client-urls <a href="https://192.168.1.31:2379" target="_blank" rel="noopener">https://192.168.1.31:2379</a> <br>  –initial-cluster-token etcd-cluster-0 <br>  –initial-cluster k8s-master1=<a href="https://192.168.1.31:2380,k8s-master2=https://192.168.1.32:2380,k8s-master3=https://192.168.1.33:2380">https://192.168.1.31:2380,k8s-master2=https://192.168.1.32:2380,k8s-master3=https://192.168.1.33:2380</a> <br>  –initial-cluster-state new <br>  –data-dir=/var/lib/etcd<br>Restart=on-failure<br>RestartSec=5<br>LimitNOFILE=65536</p>
+<p>[Install]<br>WantedBy=multi-user.target<br>EOF</p>
+<p>#启动etcd服务<br>mkdir /var/lib/etcd<br>systemctl daemon-reload &amp;&amp; systemctl enable etcd.service &amp;&amp; systemctl start etcd.service &amp;&amp; systemctl status etcd</p>
+<pre><code>- k8s-master2:
+```sh
+cat &lt;&lt;EOF &gt;/etc/systemd/system/etcd.service
+[Unit]
+Description=Etcd Server
+After=network.target
+After=network-online.target
+Wants=network-online.target
+Documentation=https://github.com/coreos
+
+[Service]
+Type=notify
+WorkingDirectory=/var/lib/etcd/
+ExecStart=/usr/local/bin/etcd \
+  --name k8s-master2 \
+  --cert-file=/etc/kubernetes/ssl/etcd.pem \
+  --key-file=/etc/kubernetes/ssl/etcd-key.pem \
+  --trusted-ca-file=/etc/kubernetes/ssl/ca.pem \
+  --peer-cert-file=/etc/kubernetes/ssl/etcd.pem \
+  --peer-key-file=/etc/kubernetes/ssl/etcd-key.pem \
+  --peer-trusted-ca-file=/etc/kubernetes/ssl/ca.pem \
+  --initial-advertise-peer-urls https://192.168.1.32:2380 \
+  --listen-peer-urls https://192.168.1.32:2380 \
+  --listen-client-urls https://192.168.1.32:2379,http://127.0.0.1:2379 \
+  --advertise-client-urls https://192.168.1.32:2379 \
+  --initial-cluster-token etcd-cluster-0 \
+  --initial-cluster k8s-master1=https://192.168.1.31:2380,k8s-master2=https://192.168.1.32:2380,k8s-master3=https://192.168.1.33:2380 \
+  --initial-cluster-state new \
+  --data-dir=/var/lib/etcd
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+#启动etcd服务
+mkdir /var/lib/etcd
+systemctl daemon-reload &amp;&amp; systemctl enable etcd.service &amp;&amp; systemctl start etcd.service &amp;&amp; systemctl status etcd</code></pre><ul>
+<li>k8s-master3:<pre class=" language-sh"><code class="language-sh">cat <<EOF >/etc/systemd/system/etcd.service
+[Unit]
+Description=Etcd Server
+After=network.target
+After=network-online.target
+Wants=network-online.target
+Documentation=https://github.com/coreos
+</code></pre>
+</li>
+</ul>
+<p>[Service]<br>Type=notify<br>WorkingDirectory=/var/lib/etcd/<br>ExecStart=/usr/local/bin/etcd <br>  –name k8s-master3 <br>  –cert-file=/etc/kubernetes/ssl/etcd.pem <br>  –key-file=/etc/kubernetes/ssl/etcd-key.pem <br>  –trusted-ca-file=/etc/kubernetes/ssl/ca.pem <br>  –peer-cert-file=/etc/kubernetes/ssl/etcd.pem <br>  –peer-key-file=/etc/kubernetes/ssl/etcd-key.pem <br>  –peer-trusted-ca-file=/etc/kubernetes/ssl/ca.pem <br>  –initial-advertise-peer-urls <a href="https://192.168.1.33:2380" target="_blank" rel="noopener">https://192.168.1.33:2380</a> <br>  –listen-peer-urls <a href="https://192.168.1.33:2380" target="_blank" rel="noopener">https://192.168.1.33:2380</a> <br>  –listen-client-urls <a href="https://192.168.1.33:2379,http://127.0.0.1:2379">https://192.168.1.33:2379,http://127.0.0.1:2379</a> <br>  –advertise-client-urls <a href="https://192.168.1.33:2379" target="_blank" rel="noopener">https://192.168.1.33:2379</a> <br>  –initial-cluster-token etcd-cluster-0 <br>  –initial-cluster k8s-master1=<a href="https://192.168.1.31:2380,k8s-master2=https://192.168.1.32:2380,k8s-master3=https://192.168.1.33:2380">https://192.168.1.31:2380,k8s-master2=https://192.168.1.32:2380,k8s-master3=https://192.168.1.33:2380</a> <br>  –initial-cluster-state new <br>  –data-dir=/var/lib/etcd<br>Restart=on-failure<br>RestartSec=5<br>LimitNOFILE=65536</p>
+<p>[Install]<br>WantedBy=multi-user.target<br>EOF</p>
+<p>#启动etcd服务<br>mkdir /var/lib/etcd<br>systemctl daemon-reload &amp;&amp; systemctl enable etcd.service &amp;&amp; systemctl start etcd.service &amp;&amp; systemctl status etcd</p>
+<pre><code>
+1. 验证集群
+```sh
+etcdctl --ca-file=/etc/kubernetes/ssl/ca.pem --cert-file=/etc/kubernetes/ssl/etcd.pem --key-file=/etc/kubernetes/ssl/etcd-key.pem cluster-health
+#返回如下正常
+member 22a9d61e6821c4d is healthy: got healthy result from https://192.168.1.32:2379
+member 68afffba56612fd is healthy: got healthy result from https://192.168.1.31:2379
+member ff1f72bab5edb59f is healthy: got healthy result from https://192.168.1.33:2379
+cluster is healthy</code></pre><h2 id="部署flannel"><a href="#部署flannel" class="headerlink" title="部署flannel"></a>部署flannel</h2><p>所有的节点都需要安装flannel，，主要目的是跨主机的docker能够互相通信，也是保障kubernetes集群的网络基础和保障</p>
+<ol>
+<li>生产TLS证书，是让kubectl当做client证书使用,(证书只需要生成一次)<pre class=" language-sh"><code class="language-sh">cd /root/ssl
+cat > flanneld-csr.json <<EOF
+{
+"CN": "flanneld",
+"hosts": [],
+"key": {
+ "algo": "rsa",
+ "size": 2048
+},
+"names": [
+ {
+   "C": "CN",
+   "ST": "ShangHai",
+   "L": "ShangHai",
+   "O": "k8s",
+   "OU": "System"
+ }
+]
+}
+EOF</code></pre>
+</li>
+<li>生成证书和私钥<pre class=" language-sh"><code class="language-sh">cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes flanneld-csr.json | cfssljson -bare flanneld
+</code></pre>
+</li>
+</ol>
+<p>#包含以下文件<br>flanneld.csr<br>flanneld-csr.json<br>flanneld-key.pem<br>flanneld.pem<br>#然后将证书拷贝到所有节点下<br>cp flanneld<em>.pem /etc/kubernetes/ssl<br>scp flanneld</em>.pem 192.168.1.32:/etc/kubernetes/ssl<br>scp flanneld*.pem 192.168.1.33:/etc/kubernetes/ssl</p>
+<pre><code>
+1. 安装flannel
+```sh
+wget https://github.com/coreos/flannel/releases/download/v0.11.0/flannel-v0.11.0-linux-amd64.tar.gz
+tar -zvxf flannel-v0.11.0-linux-amd64.tar.gz
+cp flanneld mk-docker-opts.sh /usr/local/bin
+cp flanneld mk-docker-opts.sh /usr/local/bin
+scp flanneld mk-docker-opts.sh 192.168.1.32:/usr/local/bin
+scp flanneld mk-docker-opts.sh 192.168.1.33:/usr/local/bin</code></pre><ol>
+<li>向etcd写入集群Pod网段信息，在etcd集群中任意一台执行一次即可<br>```sh<br>etcdctl \</li>
+</ol>
+<p>–endpoints=<a href="https://192.168.1.31:2379,https://192.168.1.32:2379,https://192.168.1.33:2379">https://192.168.1.31:2379,https://192.168.1.32:2379,https://192.168.1.33:2379</a> <br>–ca-file=/etc/kubernetes/ssl/ca.pem <br>–cert-file=/etc/kubernetes/ssl/flanneld.pem <br>–key-file=/etc/kubernetes/ssl/flanneld-key.pem <br>mk /kubernetes/network/config ‘{“Network”:”172.30.0.0/16”, “SubnetLen”: 24, “Backend”: {“Type”: “vxlan”}}’<br>#返回结果<br>{“Network”:”172.30.0.0/16”, “SubnetLen”: 24, “Backend”: {“Type”: “vxlan”}</p>
+<p>#验证<br>#列出键值存储的目录<br>etcdctl <br>–ca-file=/etc/kubernetes/ssl/ca.pem <br>–cert-file=/etc/kubernetes/ssl/flanneld.pem <br>–key-file=/etc/kubernetes/ssl/flanneld-key.pem ls -r</p>
+<p>#查看键值存储<br>etcdctl <br>–ca-file=/etc/kubernetes/ssl/ca.pem <br>–cert-file=/etc/kubernetes/ssl/flanneld.pem <br>–key-file=/etc/kubernetes/ssl/flanneld-key.pem get /kubernetes/network/config</p>
+<p>#查看已分配pod的子网列表（暂时没有为docker分配子网，启动flannel可以查看）<br>etcdctl <br>–ca-file=/etc/kubernetes/ssl/ca.pem <br>–cert-file=/etc/kubernetes/ssl/flanneld.pem <br>–key-file=/etc/kubernetes/ssl/flanneld-key.pem ls  /kubernetes/network/subnets</p>
+<pre><code>
+1. 创建flannel.service文件
+```sh
+cat &gt; /etc/systemd/system/flannel.service &lt;&lt; EOF
+[Unit]
+Description=Flanneld overlay address etcd agent
+After=network.target
+After=network-online.target
+Wants=network-online.target
+After=etcd.service
+Before=docker.service
+
+[Service]
+Type=notify
+ExecStart=/usr/local/bin/flanneld \
+  -etcd-cafile=/etc/kubernetes/ssl/ca.pem \
+  -etcd-certfile=/etc/kubernetes/ssl/flanneld.pem \
+  -etcd-keyfile=/etc/kubernetes/ssl/flanneld-key.pem \
+  -etcd-endpoints=https://192.168.1.31:2379,https://192.168.1.32:2379,https://192.168.1.33:2379 \
+  -etcd-prefix=/kubernetes/network
+ExecStartPost=/usr/local/bin/mk-docker-opts.sh -k DOCKER_NETWORK_OPTIONS -d /run/flannel/docker
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+RequiredBy=docker.service
+EOF</code></pre><ol>
+<li><p>启动flannel</p>
+<pre class=" language-sh"><code class="language-sh">systemctl daemon-reload && systemctl enable flannel && systemctl start flannel && systemctl status flannel</code></pre>
+</li>
+<li><p>验证flannel</p>
+<pre class=" language-sh"><code class="language-sh">cat /run/flannel/docker
+#/run/flannel/docker是flannel分配给docker的子网信息，显示如下
+DOCKER_OPT_BIP="--bip=172.30.10.1/24"
+DOCKER_OPT_IPMASQ="--ip-masq=true"
+DOCKER_OPT_MTU="--mtu=1450"
+DOCKER_NETWORK_OPTIONS=" --bip=172.30.10.1/24 --ip-masq=true --mtu=1450"
+</code></pre>
+</li>
+</ol>
+<p>ip add | grep flannel<br>4: flannel.1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UNKNOWN group default<br>    inet 172.30.10.0/32 scope global flannel.1</p>
+<p>cat /run/flannel/subnet.env<br>FLANNEL_NETWORK=172.30.0.0/16<br>FLANNEL_SUBNET=172.30.10.1/24<br>FLANNEL_MTU=1450<br>FLANNEL_IPMASQ=false</p>
+<pre><code>
+1. 配置docker支持flannel
+```sh
+vim /etc/systemd/system/multi-user.target.wants/docker.service
+EnvironmentFile=/run/flannel/docker
+ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock $DOCKER_NETWORK_OPTIONS</code></pre><ol>
+<li>重启docker,然后可以查看到已分配pod的子网列表<pre class=" language-sh"><code class="language-sh">systemctl daemon-reload && systemctl restart docker && systemctl status docker
+</code></pre>
+</li>
+</ol>
+<p>ip add | grep docker<br>3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default<br>    inet 172.30.10.1/24 brd 172.30.10.255 scope global docker0</p>
+<pre><code>
+1. 设置CNI插件支持flannel
+```sh
+wget https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz
+mkdir /opt/cni
+tar -zxvf cni-plugins-linux-amd64-v0.8.1.tgz -C /opt/cni
+mkdir -p /etc/cni/net.d
+cat &gt; /etc/cni/net.d/10-default.conf &lt;&lt;EOF
+{
+    &quot;name&quot;: &quot;flannel&quot;,
+    &quot;type&quot;: &quot;flannel&quot;,
+    &quot;delegate&quot;: {
+        &quot;bridge&quot;: &quot;docker0&quot;,
+        &quot;isDefaultGateway&quot;: true,
+        &quot;mtu&quot;: 1400
+    }
+}
+EOF
+
+cp /opt/cni/* /usr/local/bin
+scp /opt/cni/* 192.168.1.32:/usr/local/bin
+scp /opt/cni/* 192.168.1.33:/usr/local/bin
+ssh -n 192.168.1.32 &quot;mkdir -p /etc/cni/net.d &amp;&amp; exit&quot;
+ssh -n 192.168.1.33 &quot;mkdir -p /etc/cni/net.d &amp;&amp; exit&quot;
+scp /etc/cni/net.d/10-default.conf 192.168.1.32:/etc/cni/net.d/
+scp /etc/cni/net.d/10-default.conf 192.168.1.33:/etc/cni/net.d/</code></pre><h2 id="部署keepalived-haproxy"><a href="#部署keepalived-haproxy" class="headerlink" title="部署keepalived+haproxy"></a>部署keepalived+haproxy</h2><p>keepalived 提供 kube-apiserver 对外服务的 VIP；haproxy 监听 VIP，后端连接所有 kube-apiserver 实例，提供健康检查和负载均衡功能  </p>
+<p>本文档复用 master 节点的三台机器，haproxy 监听的端口(8443) 需要与 kube-apiserver 的端口 6443 不同，避免冲突。  </p>
+<p>keepalived 在运行过程中周期检查本机的 haproxy 进程状态，如果检测到 haproxy 进程异常，则触发重新选主的过程，VIP 将飘移到新选出来的主节点，从而实现 VIP 的高可用。<br>所有组件（如 kubeclt、apiserver、controller-manager、scheduler 等）都通过 VIP 和 haproxy 监听的 8443 端口访问 kube-apiserver 服务。  </p>
+<h3 id="部署haproxy"><a href="#部署haproxy" class="headerlink" title="部署haproxy"></a>部署haproxy</h3><ol>
+<li>安装配置haproxy<pre class=" language-sh"><code class="language-sh">yum install -y haproxy
+</code></pre>
+</li>
+</ol>
+<p>cat &lt;&lt; EOF &gt; /etc/haproxy/haproxy.cfg<br>global<br>    log         127.0.0.1 local2<br>    chroot      /var/lib/haproxy<br>    pidfile     /var/run/haproxy.pid<br>    maxconn     4000<br>    user        haproxy<br>    group       haproxy<br>    daemon</p>
+<p>defaults<br>    mode                    tcp<br>    log                     global<br>    retries                 3<br>    timeout connect         10s<br>    timeout client          1m<br>    timeout server          1m</p>
+<p>listen  admin_stats<br>    bind 0.0.0.0:9090<br>    mode http<br>    log 127.0.0.1 local0 err<br>    stats refresh 30s<br>    stats uri /status<br>    stats realm welcome login\ Haproxy<br>    stats auth admin:123456<br>    stats hide-version<br>    stats admin if TRUE</p>
+<p>frontend kubernetes<br>    bind *:8443<br>    mode tcp<br>    default_backend kubernetes-master</p>
+<p>backend kubernetes-master<br>    balance roundrobin<br>    server k8s-master1 192.168.1.31:6443 check maxconn 2000<br>    server k8s-master2 192.168.1.32:6443 check maxconn 2000<br>    server k8s-master3 192.168.1.33:6443 check maxconn 2000<br>EOF</p>
+<pre><code>1. 启动haproxy
+```sh
+systemctl enable haproxy &amp;&amp; systemctl start haproxy &amp;&amp; systemctl status haproxy</code></pre><h3 id="部署keepalived"><a href="#部署keepalived" class="headerlink" title="部署keepalived"></a>部署keepalived</h3><ol>
+<li>安装keepalived<pre class=" language-sh"><code class="language-sh">yum install -y keepalived</code></pre>
+</li>
+<li>keepalived配置文件，注意网卡interface未必全部一样，配置VIP为192.168.1.10</li>
+</ol>
+<ul>
+<li>k8s-master1:<pre class=" language-sh"><code class="language-sh">cat <<EOF > /etc/keepalived/keepalived.conf
+global_defs {
+ router_id LVS_k8s
+}
+</code></pre>
+</li>
+</ul>
+<p>vrrp_script CheckK8sMaster {<br>    script “curl -k <a href="https://192.168.1.10:8443&quot;">https://192.168.1.10:8443&quot;</a><br>    interval 3<br>    timeout 9<br>    fall 2<br>    rise 2<br>}</p>
+<p>vrrp_instance VI_1 {<br>    state MASTER<br>    interface ens160<br>    virtual_router_id 100<br>    priority 100<br>    advert_int 1<br>    mcast_src_ip 192.168.1.31<br>    nopreempt<br>    authentication {<br>        auth_type PASS<br>        auth_pass fana123<br>    }<br>    unicast_peer {<br>        192.168.1.32<br>        192.168.1.33<br>    }<br>    virtual_ipaddress {<br>        192.168.1.10/24<br>    }<br>    track_script {<br>        CheckK8sMaster<br>    }</p>
+<p>}<br>EOF</p>
+<pre><code>- k8s-master2:
+```sh
+cat &lt;&lt;EOF &gt; /etc/keepalived/keepalived.conf
+global_defs {
+   router_id LVS_k8s
+}
+
+vrrp_script CheckK8sMaster {
+    script &quot;curl -k https://192.168.1.10:8443&quot;
+    interval 3
+    timeout 9
+    fall 2
+    rise 2
+}
+
+vrrp_instance VI_1 {
+    state BACKUP
+    interface ens32
+    virtual_router_id 100
+    priority 90
+    advert_int 1
+    mcast_src_ip 192.168.1.32
+    nopreempt
+    authentication {
+        auth_type PASS
+        auth_pass fana123
+    }
+    unicast_peer {
+        192.168.1.31
+        192.168.1.33
+    }
+    virtual_ipaddress {
+        192.168.1.10/24
+    }
+    track_script {
+        CheckK8sMaster
+    }
+}
+EOF</code></pre><ul>
+<li>k8s-master3:<pre class=" language-sh"><code class="language-sh">cat <<EOF > /etc/keepalived/keepalived.conf
+global_defs {
+ router_id LVS_k8s
+}
+</code></pre>
+</li>
+</ul>
+<p>vrrp_script CheckK8sMaster {<br>    script “curl -k <a href="https://192.168.1.10:8443&quot;">https://192.168.1.10:8443&quot;</a><br>    interval 3<br>    timeout 9<br>    fall 2<br>    rise 2<br>}</p>
+<p>vrrp_instance VI_1 {<br>    state BACKUP<br>    interface ens160<br>    virtual_router_id 100<br>    priority 80<br>    advert_int 1<br>    mcast_src_ip 192.168.1.33<br>    nopreempt<br>    authentication {<br>        auth_type PASS<br>        auth_pass fana123<br>    }<br>    unicast_peer {<br>        192.168.1.31<br>        192.168.1.32<br>    }<br>    virtual_ipaddress {<br>        192.168.1.10/24<br>    }<br>    track_script {<br>        CheckK8sMaster<br>    }</p>
+<p>}<br>EOF</p>
+<pre><code>
+1. 启动keepalived
+```sh
+systemctl restart keepalived &amp;&amp; systemctl enable keepalived &amp;&amp; systemctl status keepalived</code></pre><ol>
+<li>查看三台vip(只有一台为VIP)<pre class=" language-sh"><code class="language-sh">ip addr |grep 1.10
+ inet 192.168.1.10/24 scope global secondary ens160</code></pre>
+</li>
+</ol>
+<h2 id="部署master"><a href="#部署master" class="headerlink" title="部署master"></a>部署master</h2><p>kube-scheduler，kube-controller-manager 和 kube-apiserver 三者的功能紧密相关；同时kube-scheduler 和 kube-controller-manager 只能有一个进程处于工作状态，如果运行多个，则需要通过选举产生一个 leader；</p>
+<h3 id="部署kubectl命令工具"><a href="#部署kubectl命令工具" class="headerlink" title="部署kubectl命令工具"></a>部署kubectl命令工具</h3><ol>
+<li>创建CA证书<pre class=" language-sh"><code class="language-sh">wget https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-server-linux-amd64.tar.gz
+tar -zxvf kubernetes-server-linux-amd64.tar.gz
+cd kubernetes/server/bin
+cp kube-apiserver kubeadm kube-controller-manager kubectl kube-scheduler /usr/local/bin
+scp -r kube-apiserver kubeadm kube-controller-manager kubectl kube-scheduler k8s-master2:/usr/local/bin
+scp -r kube-apiserver kubeadm kube-controller-manager kubectl kube-scheduler k8s-master3:/usr/local/bin</code></pre>
+</li>
+<li>创建CA证书<pre class=" language-sh"><code class="language-sh">cd /root/ssl
+cat > admin-csr.json <<EOF
+{
+"CN": "admin",
+"hosts": [],
+"key": {
+ "algo": "rsa",
+ "size": 2048
+},
+"names": [
+ {
+   "C": "CN",
+   "ST": "ShangHai",
+   "L": "ShangHai",
+   "O": "system:masters",
+   "OU": "System"
+ }
+]
+}
+EOF</code></pre>
+</li>
+<li>生成证书和私钥<pre class=" language-sh"><code class="language-sh">cfssl gencert -ca=ca.pem \
+-ca-key=ca-key.pem \
+-config=ca-config.json \
+-profile=kubernetes admin-csr.json | cfssljson -bare admin</code></pre>
+</li>
+<li>创建($HOME)/.kube/config文件<pre class=" language-sh"><code class="language-sh">kubectl config set-cluster kubernetes \
+--certificate-authority=ca.pem \
+--embed-certs=true \
+--server=https://192.168.1.10:8443 \
+--kubeconfig=kubectl.kubeconfig</code></pre>
+</li>
+<li>设置客户端认证参数<pre class=" language-sh"><code class="language-sh">kubectl config set-credentials admin \
+--client-certificate=admin.pem \
+--client-key=admin-key.pem \
+--embed-certs=true \
+--kubeconfig=kubectl.kubeconfig</code></pre>
+</li>
+<li>设置上下文参数<pre class=" language-sh"><code class="language-sh">kubectl config set-context kubernetes \
+--cluster=kubernetes \
+--user=admin \
+--kubeconfig=kubectl.kubeconfig</code></pre>
+</li>
+<li>设置默认上下文<pre class=" language-sh"><code class="language-sh">kubectl config use-context kubernetes --kubeconfig=kubectl.kubeconfig</code></pre>
+</li>
+<li>拷贝kubectl.kubeconfig文件<pre class=" language-sh"><code class="language-sh">cp kubectl.kubeconfig ~/.kube/config
+ssh -n 192.168.1.32 "mkdir -p /root/.kube && exit"
+ssh -n 192.168.1.33 "mkdir -p /root/.kube && exit"
+scp kubectl.kubeconfig 192.168.1.32:/root/.kube/config
+scp kubectl.kubeconfig 192.168.1.33:/root/.kube/config
+</code></pre>
+</li>
+</ol>
+<p>cp admin<em>.pem /etc/kubernetes/ssl/<br>scp admin</em>.pem 192.168.1.32:/etc/kubernetes/ssl/<br>scp admin*.pem 192.168.1.33:/etc/kubernetes/ssl/</p>
+<pre><code>
+### 部署api-server
+1. 创建CA证书,hosts字段指定授权使用该证书的IP或域名列表，这里列出了VIP/apiserver节点IP/kubernetes服务IP和域名  
+```sh
+cd /root/ssl
+cat &gt; kubernetes-csr.json &lt;&lt;EOF
+{
+  &quot;CN&quot;: &quot;kubernetes&quot;,
+  &quot;hosts&quot;: [
+    &quot;127.0.0.1&quot;,
+    &quot;192.168.1.31&quot;,
+    &quot;192.168.1.32&quot;,
+    &quot;192.168.1.33&quot;,
+    &quot;192.168.1.10&quot;,
+    &quot;10.254.0.1&quot;,
+    &quot;kubernetes&quot;,
+    &quot;kubernetes.default&quot;,
+    &quot;kubernetes.default.svc&quot;,
+    &quot;kubernetes.default.svc.cluster&quot;,
+    &quot;kubernetes.default.svc.cluster.local&quot;
+  ],
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;CN&quot;,
+      &quot;ST&quot;: &quot;ShangHai&quot;,
+      &quot;L&quot;: &quot;ShangHai&quot;,
+      &quot;O&quot;: &quot;k8s&quot;,
+      &quot;OU&quot;: &quot;System&quot;
+    }
+  ]
+}
+EOF</code></pre><ol>
+<li>生成证书和私钥<pre class=" language-sh"><code class="language-sh">cfssl gencert -ca=ca.pem \
+-ca-key=ca-key.pem \
+-config=ca-config.json \
+-profile=kubernetes kubernetes-csr.json | cfssljson -bare kubernetes</code></pre>
+</li>
+<li>将证书拷贝到其他master节点<pre class=" language-sh"><code class="language-sh">cp kubernetes*.pem /etc/kubernetes/ssl/
+scp kubernetes*.pem 192.168.1.32:/etc/kubernetes/ssl/
+scp kubernetes*.pem 192.168.1.33:/etc/kubernetes/ssl/</code></pre>
+</li>
+<li>创建加密配置文件，创建kube-apiserver使用的客户端令牌文件<pre class=" language-sh"><code class="language-sh">cat > encryption-config.yaml <<EOF
+kind: EncryptionConfig
+apiVersion: v1
+resources:
+- resources:
+   - secrets
+ providers:
+   - aescbc:
+       keys:
+         - name: key1
+           secret: $(head -c 32 /dev/urandom | base64)
+   - identity: {}
+EOF
+</code></pre>
+</li>
+</ol>
+<p>cat &lt;<EOF > bootstrap-token.csv<br>$(head -c 32 /dev/urandom | base64),kubelet-bootstrap,10001,”system:kubelet-bootstrap”<br>EOF</p>
+<pre><code>1. 将加密文件拷贝到其他master节点
+```sh
+cp encryption-config.yaml bootstrap-token.csv /etc/kubernetes/ssl
+scp encryption-config.yaml bootstrap-token.csv 192.168.1.32:/etc/kubernetes/ssl
+scp encryption-config.yaml bootstrap-token.csv 192.168.1.33:/etc/kubernetes/ssl</code></pre><ol>
+<li>创建kube-apiserver.service文件<pre class=" language-sh"><code class="language-sh">cat > /etc/systemd/system/kube-apiserver.service << EOF
+[Unit]
+Description=Kubernetes API Server
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+After=network.target
+</code></pre>
+</li>
+</ol>
+<p>[Service]<br>ExecStart=/usr/local/bin/kube-apiserver <br>  –enable-admission-plugins=NamespaceLifecycle,NodeRestriction,LimitRanger,ServiceAccount,DefaultStorageClass,ResourceQuota <br>  –anonymous-auth=false <br>  –experimental-encryption-provider-config=/etc/kubernetes/ssl/encryption-config.yaml <br>  –advertise-address=0.0.0.0 <br>  –bind-address=0.0.0.0 <br>  –insecure-bind-address=127.0.0.1 <br>  –secure-port=6443 <br>  –insecure-port=0 <br>  –authorization-mode=Node,RBAC <br>  –runtime-config=api/all <br>  –enable-bootstrap-token-auth <br>  –service-cluster-ip-range=10.254.0.0/16 <br>  –service-node-port-range=30000-32700 <br>  –tls-cert-file=/etc/kubernetes/ssl/kubernetes.pem <br>  –tls-private-key-file=/etc/kubernetes/ssl/kubernetes-key.pem <br>  –client-ca-file=/etc/kubernetes/ssl/ca.pem <br>  –kubelet-client-certificate=/etc/kubernetes/ssl/kubernetes.pem <br>  –kubelet-client-key=/etc/kubernetes/ssl/kubernetes-key.pem <br>  –service-account-key-file=/etc/kubernetes/ssl/ca-key.pem <br>  –etcd-cafile=/etc/kubernetes/ssl/ca.pem <br>  –etcd-certfile=/etc/kubernetes/ssl/kubernetes.pem <br>  –etcd-keyfile=/etc/kubernetes/ssl/kubernetes-key.pem <br>  –etcd-servers=<a href="https://192.168.1.31:2379,https://192.168.1.32:2379,https://192.168.1.33:2379">https://192.168.1.31:2379,https://192.168.1.32:2379,https://192.168.1.33:2379</a> <br>  –enable-swagger-ui=true <br>  –allow-privileged=true <br>  –apiserver-count=3 <br>  –audit-log-maxage=30 <br>  –audit-log-maxbackup=3 <br>  –audit-log-maxsize=100 <br>  –audit-log-path=/var/log/kubernetes/kube-apiserver-audit.log <br>  –event-ttl=1h <br>  –alsologtostderr=true <br>  –logtostderr=false <br>  –log-dir=/var/log/kubernetes <br>  –v=2<br>Restart=on-failure<br>RestartSec=5<br>Type=notify<br>LimitNOFILE=65536</p>
+<p>[Install]<br>WantedBy=multi-user.target<br>EOF</p>
+<p>mkdir -p /var/log/kubernetes<br>ssh -n 192.168.1.32 “mkdir -p /var/log/kubernetes &amp;&amp; exit”<br>ssh -n 192.168.1.33 “mkdir -p /var/log/kubernetes &amp;&amp; exit”<br>scp /etc/systemd/system/kube-apiserver.service 192.168.1.32:/etc/systemd/system/<br>scp /etc/systemd/system/kube-apiserver.service 192.168.1.33:/etc/systemd/system/</p>
+<h1 id="–bind-address-–insecure-bind-address-填固定IPv4地址，不然启动为ipv6，controller-manager总是报错"><a href="#–bind-address-–insecure-bind-address-填固定IPv4地址，不然启动为ipv6，controller-manager总是报错" class="headerlink" title="–bind-address –insecure-bind-address 填固定IPv4地址，不然启动为ipv6，controller-manager总是报错"></a>–bind-address –insecure-bind-address 填固定IPv4地址，不然启动为ipv6，controller-manager总是报错</h1><pre><code>1. 启动服务
+```sh
+systemctl daemon-reload &amp;&amp; systemctl enable kube-apiserver &amp;&amp; systemctl start kube-apiserver &amp;&amp; systemctl status kube-apiserver</code></pre><ol>
+<li>授予kubernetes证书访问kubelet api权限。在执行kubectl exec、run、logs 等命令时，apiserver会转发到kubelet。这里定义 RBAC规则，授权apiserver调用kubelet API。<pre class=" language-sh"><code class="language-sh">kubectl create clusterrolebinding kube-apiserver:kubelet-apis --clusterrole=system:kubelet-api-admin --user kubernetes
+＃预定义的ClusterRole system:kubelet-api-admin授予访问kubelet所有 API 的权限
+kubectl describe clusterrole system:kubelet-api-admin</code></pre>
+</li>
+<li>检查api-server和集群状态<pre class=" language-sh"><code class="language-sh">netstat -tnlp|grep 6443
+tcp6       0      0 :::6443                 :::*                    LISTEN      23462/kube-apiserve 
+</code></pre>
+</li>
+</ol>
+<p>kubectl cluster-info<br>Kubernetes master is running at <a href="https://192.168.1.10:8443" target="_blank" rel="noopener">https://192.168.1.10:8443</a><br>To further debug and diagnose cluster problems, use ‘kubectl cluster-info dump’.</p>
+<p>kubectl get all –all-namespaces<br>NAMESPACE   NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE<br>default     service/kubernetes   ClusterIP   10.254.0.1   <none>        443/TCP   6m44s</p>
+<p>kubectl get componentstatuses<br>NAME                 STATUS      MESSAGE                                                                                     ERROR<br>scheduler            Unhealthy   Get <a href="http://127.0.0.1:10251/healthz" target="_blank" rel="noopener">http://127.0.0.1:10251/healthz</a>: dial tcp 127.0.0.1:10251: connect: connection refused<br>controller-manager   Unhealthy   Get <a href="http://127.0.0.1:10252/healthz" target="_blank" rel="noopener">http://127.0.0.1:10252/healthz</a>: dial tcp 127.0.0.1:10252: connect: connection refused<br>etcd-0               Healthy     {“health”:”true”}<br>etcd-1               Healthy     {“health”:”true”}<br>etcd-2               Healthy     {“health”:”true”}</p>
+<pre><code>
+### 部署kube-controller-manager
+该集群包含 3 个节点，启动后将通过竞争选举机制产生一个 leader 节点，其它节点为阻塞状态。当 leader 节点不可用后，剩余节点将再次进行选举产生新的 leader 节点，从而保证服务的可用性。  
+1. 创建CA证书
+```sh
+cd /root/ssl
+cat &gt; kube-controller-manager-csr.json &lt;&lt; EOF
+{
+    &quot;CN&quot;: &quot;system:kube-controller-manager&quot;,
+    &quot;key&quot;: {
+        &quot;algo&quot;: &quot;rsa&quot;,
+        &quot;size&quot;: 2048
+    },
+    &quot;hosts&quot;: [
+      &quot;127.0.0.1&quot;,
+      &quot;192.168.1.31&quot;,
+      &quot;192.168.1.32&quot;,
+      &quot;192.168.1.33&quot;
+    ],
+    &quot;names&quot;: [
+      {
+        &quot;C&quot;: &quot;CN&quot;,
+        &quot;ST&quot;: &quot;ShangHai&quot;,
+        &quot;L&quot;: &quot;ShangHai&quot;,
+        &quot;O&quot;: &quot;system:kube-controller-manager&quot;,
+        &quot;OU&quot;: &quot;System&quot;
+      }
+    ]
+}
+EOF</code></pre><ol>
+<li>生成证书<pre class=" language-sh"><code class="language-sh">cfssl gencert -ca=ca.pem \
+-ca-key=ca-key.pem \
+-config=ca-config.json \
+-profile=kubernetes kube-controller-manager-csr.json | cfssljson -bare kube-controller-manager</code></pre>
+</li>
+<li>将证书拷贝到其他master节点<pre class=" language-sh"><code class="language-sh">cp kube-controller-manager*.pem /etc/kubernetes/ssl/
+scp kube-controller-manager*.pem 192.168.1.32:/etc/kubernetes/ssl/
+scp kube-controller-manager*.pem 192.168.1.33:/etc/kubernetes/ssl/</code></pre>
+</li>
+<li>创建kubeconfig文件<pre class=" language-sh"><code class="language-sh">kubectl config set-cluster kubernetes \
+--certificate-authority=ca.pem \
+--embed-certs=true \
+--server=https://192.168.1.10:8443 \
+--kubeconfig=kube-controller-manager.kubeconfig
+</code></pre>
+</li>
+</ol>
+<p>kubectl config set-credentials system:kube-controller-manager <br>  –client-certificate=kube-controller-manager.pem <br>  –client-key=kube-controller-manager-key.pem <br>  –embed-certs=true <br>  –kubeconfig=kube-controller-manager.kubeconfig</p>
+<p>kubectl config set-context system:kube-controller-manager <br>  –cluster=kubernetes <br>  –user=system:kube-controller-manager <br>  –kubeconfig=kube-controller-manager.kubeconfig</p>
+<p>kubectl config use-context system:kube-controller-manager –kubeconfig=kube-controller-manager.kubeconfig</p>
+<pre><code>1. 拷贝kube-controller-manager.kubeconfig到其他master节点
+```sh
+cp kube-controller-manager.kubeconfig /etc/kubernetes/ssl/
+scp kube-controller-manager.kubeconfig 192.168.1.32:/etc/kubernetes/ssl/
+scp kube-controller-manager.kubeconfig 192.168.1.33:/etc/kubernetes/ssl/</code></pre><ol>
+<li>创建kube-controller-manager.service文件<pre class=" language-sh"><code class="language-sh">cat > /etc/systemd/system/kube-controller-manager.service  << EOF
+[Unit]
+Description=Kubernetes Controller Manager
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+</code></pre>
+</li>
+</ol>
+<p>[Service]<br>ExecStart=/usr/local/bin/kube-controller-manager <br>  –address=127.0.0.1 <br>  –master=<a href="https://192.168.1.10:8443" target="_blank" rel="noopener">https://192.168.1.10:8443</a> <br>  –kubeconfig=/etc/kubernetes/ssl/kube-controller-manager.kubeconfig <br>  –allocate-node-cidrs=true <br>  –authentication-kubeconfig=/etc/kubernetes/ssl/kube-controller-manager.kubeconfig <br>  –service-cluster-ip-range=10.254.0.0/16 <br>  –cluster-cidr=172.30.0.0/16 <br>  –cluster-name=kubernetes <br>  –cluster-signing-cert-file=/etc/kubernetes/ssl/ca.pem <br>  –cluster-signing-key-file=/etc/kubernetes/ssl/ca-key.pem <br>  –experimental-cluster-signing-duration=8760h <br>  –leader-elect=true <br>  –feature-gates=RotateKubeletServerCertificate=true <br>  –controllers=*,bootstrapsigner,tokencleaner <br>  –horizontal-pod-autoscaler-use-rest-clients=true <br>  –horizontal-pod-autoscaler-sync-period=10s <br>  –tls-cert-file=/etc/kubernetes/ssl/kube-controller-manager.pem <br>  –tls-private-key-file=/etc/kubernetes/ssl/kube-controller-manager-key.pem <br>  –service-account-private-key-file=/etc/kubernetes/ssl/ca-key.pem <br>  –root-ca-file=/etc/kubernetes/ssl/ca.pem <br>  –use-service-account-credentials=true <br>  –alsologtostderr=true <br>  –logtostderr=false <br>  –log-dir=/var/log/kubernetes <br>  –v=2<br>Restart=on<br>Restart=on-failure<br>RestartSec=5</p>
+<p>[Install]<br>WantedBy=multi-user.target<br>EOF</p>
+<pre><code>1. 拷贝到其他master节点，然后启动服务
+```sh
+scp /etc/systemd/system/kube-controller-manager.service 192.168.1.32:/etc/systemd/system/
+scp /etc/systemd/system/kube-controller-manager.service 192.168.1.33:/etc/systemd/system/
+
+systemctl daemon-reload &amp;&amp; systemctl enable kube-controller-manager &amp;&amp; systemctl start kube-controller-manager &amp;&amp; systemctl status kube-controller-manager</code></pre><ol>
+<li>检查服务<pre class=" language-sh"><code class="language-sh">netstat -tnlp|grep kube-controll
+tcp        0      0 127.0.0.1:10252         0.0.0.0:*               LISTEN      24125/kube-controll 
+tcp6       0      0 :::10257                :::*                    LISTEN      24125/kube-controll
+</code></pre>
+</li>
+</ol>
+<p>kubectl get cs<br>NAME                 STATUS      MESSAGE                                                                                     ERROR<br>scheduler            Unhealthy   Get <a href="http://127.0.0.1:10251/healthz" target="_blank" rel="noopener">http://127.0.0.1:10251/healthz</a>: dial tcp 127.0.0.1:10251: connect: connection refused<br>controller-manager   Healthy     ok<br>etcd-0               Healthy     {“health”:”true”}<br>etcd-1               Healthy     {“health”:”true”}<br>etcd-2               Healthy     {“health”:”true”}</p>
+<p>检查leader所在机器,如下k8s-master1选为leader<br>kubectl get endpoints kube-controller-manager –namespace=kube-system -o yaml<br>apiVersion: v1<br>kind: Endpoints<br>metadata:<br>  annotations:<br>    control-plane.alpha.kubernetes.io/leader: ‘{“holderIdentity”:”k8s-master1_836ddc44-c586-11e9-94e1-000c29178d85”,”leaseDurationSeconds”:15,”acquireTime”:”2019-08-23T09:15:13Z”,”renewTime”:”2019-08-23T09:16:49Z”,”leaderTransitions”:0}’<br>  creationTimestamp: “2019-08-23T09:15:13Z”<br>  name: kube-controller-manager<br>  namespace: kube-system<br>  resourceVersion: “654”<br>  selfLink: /api/v1/namespaces/kube-system/endpoints/kube-controller-manager<br>  uid: 8371cd23-c586-11e9-b643-000c29327412</p>
+<pre><code>
+### 部署kube-scheduler  
+该集群包含 3 个节点，启动后将通过竞争选举机制产生一个 leader 节点，其它节点为阻塞状态。当 leader 节点不可用后，剩余节点将再次进行选举产生新的 leader 节点，从而保证服务的可用性
+
+1. 创建CA证书
+```sh
+cd /root/ssl
+cat &gt; kube-scheduler-csr.json &lt;&lt; EOF
+{
+    &quot;CN&quot;: &quot;system:kube-scheduler&quot;,
+    &quot;hosts&quot;: [
+      &quot;127.0.0.1&quot;,
+      &quot;192.168.1.31&quot;,
+      &quot;192.168.1.32&quot;,
+      &quot;192.168.1.33&quot;
+    ],
+    &quot;key&quot;: {
+        &quot;algo&quot;: &quot;rsa&quot;,
+        &quot;size&quot;: 2048
+    },
+    &quot;names&quot;: [
+      {
+        &quot;C&quot;: &quot;CN&quot;,
+        &quot;ST&quot;: &quot;ShangHai&quot;,
+        &quot;L&quot;: &quot;ShangHai&quot;,
+        &quot;O&quot;: &quot;system:kube-scheduler&quot;,
+        &quot;OU&quot;: &quot;System&quot;
+      }
+    ]
+}
+EOF</code></pre><ol>
+<li>生成证书<pre class=" language-sh"><code class="language-sh">cfssl gencert -ca=ca.pem \
+-ca-key=ca-key.pem \
+-config=ca-config.json \
+-profile=kubernetes kube-scheduler-csr.json | cfssljson -bare kube-scheduler</code></pre>
+</li>
+<li>创建kube-scheduler.kubeconfig文件<pre class=" language-sh"><code class="language-sh">kubectl config set-cluster kubernetes \
+--certificate-authority=ca.pem \
+--embed-certs=true \
+--server=https://192.168.1.10:8443 \
+--kubeconfig=kube-scheduler.kubeconfig
+</code></pre>
+</li>
+</ol>
+<p>kubectl config set-credentials system:kube-scheduler <br>  –client-certificate=kube-scheduler.pem <br>  –client-key=kube-scheduler-key.pem <br>  –embed-certs=true <br>  –kubeconfig=kube-scheduler.kubeconfig</p>
+<p>kubectl config set-context system:kube-scheduler <br>  –cluster=kubernetes <br>  –user=system:kube-scheduler <br>  –kubeconfig=kube-scheduler.kubeconfig</p>
+<p>kubectl config use-context system:kube-scheduler –kubeconfig=kube-scheduler.kubeconfig</p>
+<pre><code>
+1. 拷贝kubeconfig到其他master节点
+```sh
+cp kube-scheduler.kubeconfig kube-scheduler*.pem /etc/kubernetes/ssl/
+scp kube-scheduler.kubeconfig kube-scheduler*.pem 192.168.1.32:/etc/kubernetes/ssl/
+scp kube-scheduler.kubeconfig kube-scheduler*.pem 192.168.1.33:/etc/kubernetes/ssl/</code></pre><ol>
+<li>创建kube-scheduler.service文件<pre class=" language-sh"><code class="language-sh">cat > /etc/systemd/system/kube-scheduler.service << EOF
+[Unit]
+Description=Kubernetes Scheduler
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+</code></pre>
+</li>
+</ol>
+<p>[Service]<br>ExecStart=/usr/local/bin/kube-scheduler <br>  –address=127.0.0.1 <br>  –master=<a href="https://192.168.1.10:8443" target="_blank" rel="noopener">https://192.168.1.10:8443</a> <br>  –kubeconfig=/etc/kubernetes/ssl/kube-scheduler.kubeconfig <br>  –leader-elect=true <br>  –alsologtostderr=true <br>  –logtostderr=false <br>  –log-dir=/var/log/kubernetes <br>  –v=2<br>Restart=on-failure<br>RestartSec=5</p>
+<p>[Install]<br>WantedBy=multi-user.target<br>EOF</p>
+<pre><code>1. 将kube-scheduler.service拷贝到其他master节点，然后启动服务
+```sh
+scp /etc/systemd/system/kube-scheduler.service 192.168.1.32:/etc/systemd/system
+scp /etc/systemd/system/kube-scheduler.service 192.168.1.33:/etc/systemd/system
+
+systemctl daemon-reload &amp;&amp; systemctl enable kube-scheduler &amp;&amp; systemctl start kube-scheduler &amp;&amp; systemctl status kube-scheduler</code></pre><ol>
+<li>检查服务<pre class=" language-sh"><code class="language-sh">netstat -lnpt|grep kube-sched
+tcp        0      0 127.0.0.1:10251         0.0.0.0:*               LISTEN      24760/kube-schedule 
+tcp6       0      0 :::10259                :::*                    LISTEN      24760/kube-schedule 
+</code></pre>
+</li>
+</ol>
+<p>kubectl get cs<br>NAME                 STATUS    MESSAGE             ERROR<br>controller-manager   Healthy   ok<br>scheduler            Healthy   ok<br>etcd-2               Healthy   {“health”:”true”}<br>etcd-0               Healthy   {“health”:”true”}<br>etcd-1               Healthy   {“health”:”true”} </p>
+<p>kubectl get endpoints kube-scheduler –namespace=kube-system  -o yaml<br>apiVersion: v1<br>kind: Endpoints<br>metadata:<br>  annotations:<br>    control-plane.alpha.kubernetes.io/leader: ‘{“holderIdentity”:”k8s-master3_74560974-c588-11e9-b994-000c297ea248”,”leaseDurationSeconds”:15,”acquireTime”:”2019-08-23T09:29:07Z”,”renewTime”:”2019-08-23T09:30:38Z”,”leaderTransitions”:0}’<br>  creationTimestamp: “2019-08-23T09:29:07Z”<br>  name: kube-scheduler<br>  namespace: kube-system<br>  resourceVersion: “1365”<br>  selfLink: /api/v1/namespaces/kube-system/endpoints/kube-scheduler<br>  uid: 74ec81d5-c588-11e9-b643-000c29327412</p>
+<pre><code>
+### 在所有master节点上查看功能是否正常
+```sh
+kubectl get componentstatuses
+NAME                 STATUS    MESSAGE             ERROR
+controller-manager   Healthy   ok                  
+scheduler            Healthy   ok                  
+etcd-2               Healthy   {&quot;health&quot;:&quot;true&quot;}   
+etcd-1               Healthy   {&quot;health&quot;:&quot;true&quot;}   
+etcd-0               Healthy   {&quot;health&quot;:&quot;true&quot;}</code></pre><h2 id="部署node"><a href="#部署node" class="headerlink" title="部署node"></a>部署node</h2><p>node节点运行 docker flannel kubelet kube-proxy</p>
+<p><strong><em>先配置Centos环境,完成安装前配置和Docker，flannel的安装</em></strong></p>
+<ol>
+<li>安装flanneld<br><strong><em>将master上的文件cp到worker节点，并且安装启动flanneld</em></strong><pre class=" language-sh"><code class="language-sh">ssh -n 192.168.1.35 "mkdir -p /etc/kubernetes/ssl && exit"
+scp ca.pem 192.168.1.35:/etc/kubernetes/ssl
+scp flanneld*.pem 192.168.1.35:/etc/kubernetes/ssl</code></pre>
+之后完成部署flannel中的安装flannel</li>
+</ol>
+<h3 id="部署kubelet"><a href="#部署kubelet" class="headerlink" title="部署kubelet"></a>部署kubelet</h3><p>kubelet运行在每个 worker 节点上，接收 kube-apiserver 发送的请求，管理 Pod 容器，执行交互式命令，如 exec、run、logs 等。kubelet 启动时自动向 kube-apiserver注册节点信息，内置的 cadvisor 统计和监控节点的资源使用情况。</p>
+<ol>
+<li>下载解压包，拷贝命令(worker节点)<pre class=" language-sh"><code class="language-sh">wget https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-node-linux-amd64.tar.gz
+tar -zxvf kubernetes-node-linux-amd64.tar.gz
+cp kubectl kubelet kube-proxy /usr/local/bin</code></pre>
+</li>
+<li>创建kubelet-bootstrap.kubeconfig文件,要创建3次分别是(k8s-master1,k8s-master2,k8s-master3),都在master1上执行</li>
+</ol>
+<ul>
+<li>k8s-master1:<pre class=" language-sh"><code class="language-sh">#创建token
+cd /root/ssl
+export BOOTSTRAP_TOKEN=$(kubeadm token create \
+--description kubelet-bootstrap-token \
+--groups system:bootstrappers:k8s-master1 \
+--kubeconfig ~/.kube/config)
+</code></pre>
+</li>
+</ul>
+<p>#设置集群参数<br>kubectl config set-cluster kubernetes <br>  –certificate-authority=ca.pem <br>  –embed-certs=true <br>  –server=<a href="https://192.168.1.10:8443" target="_blank" rel="noopener">https://192.168.1.10:8443</a> <br>  –kubeconfig=kubelet-bootstrap-k8s-master1.kubeconfig</p>
+<p>#设置客户端认证参数<br>kubectl config set-credentials kubelet-bootstrap <br>  –token=${BOOTSTRAP_TOKEN} <br>  –kubeconfig=kubelet-bootstrap-k8s-master1.kubeconfig</p>
+<p>#设置上下文参数<br>kubectl config set-context default <br>  –cluster=kubernetes <br>  –user=kubelet-bootstrap <br>  –kubeconfig=kubelet-bootstrap-k8s-master1.kubeconfig</p>
+<p>#设置默认上下文<br>kubectl config use-context default –kubeconfig=kubelet-bootstrap-k8s-master1.kubeconfig</p>
+<pre><code>- k8s-master2:
+```sh
+#创建token
+cd /root/ssl
+export BOOTSTRAP_TOKEN=$(kubeadm token create \
+  --description kubelet-bootstrap-token \
+  --groups system:bootstrappers:k8s-master2 \
+  --kubeconfig ~/.kube/config)
+
+#设置集群参数
+kubectl config set-cluster kubernetes \
+  --certificate-authority=ca.pem \
+  --embed-certs=true \
+  --server=https://192.168.1.10:8443 \
+  --kubeconfig=kubelet-bootstrap-k8s-master2.kubeconfig
+
+#设置客户端认证参数
+kubectl config set-credentials kubelet-bootstrap \
+  --token=${BOOTSTRAP_TOKEN} \
+  --kubeconfig=kubelet-bootstrap-k8s-master2.kubeconfig
+
+#设置上下文参数
+kubectl config set-context default \
+  --cluster=kubernetes \
+  --user=kubelet-bootstrap \
+  --kubeconfig=kubelet-bootstrap-k8s-master2.kubeconfig
+#设置默认上下文
+kubectl config use-context default --kubeconfig=kubelet-bootstrap-k8s-master2.kubeconfig
+</code></pre><ul>
+<li>k8s-master3:<pre class=" language-sh"><code class="language-sh">#创建token
+cd /root/ssl
+export BOOTSTRAP_TOKEN=$(kubeadm token create \
+--description kubelet-bootstrap-token \
+--groups system:bootstrappers:k8s-master3 \
+--kubeconfig ~/.kube/config)
+</code></pre>
+</li>
+</ul>
+<p>#设置集群参数<br>kubectl config set-cluster kubernetes <br>  –certificate-authority=ca.pem <br>  –embed-certs=true <br>  –server=<a href="https://192.168.1.10:8443" target="_blank" rel="noopener">https://192.168.1.10:8443</a> <br>  –kubeconfig=kubelet-bootstrap-k8s-master3.kubeconfig</p>
+<p>#设置客户端认证参数<br>kubectl config set-credentials kubelet-bootstrap <br>  –token=${BOOTSTRAP_TOKEN} <br>  –kubeconfig=kubelet-bootstrap-k8s-master3.kubeconfig</p>
+<p>#设置上下文参数<br>kubectl config set-context default <br>  –cluster=kubernetes <br>  –user=kubelet-bootstrap <br>  –kubeconfig=kubelet-bootstrap-k8s-master3.kubeconfig<br>#设置默认上下文<br>kubectl config use-context default –kubeconfig=kubelet-bootstrap-k8s-master3.kubeconfig</p>
+<pre><code>1. 查看kubeadm为各节点创建的token(各master节点都可以查看)
+```sh
+kubeadm token list --kubeconfig ~/.kube/config
+#显示如下
+TOKEN                     TTL       EXPIRES                     USAGES                   DESCRIPTION               EXTRA GROUPS
+3exm03.8530h7t1j1v1sfl5   22h       2019-08-28T18:00:05+08:00   authentication,signing   kubelet-bootstrap-token   system:bootstrappers:k8s-master1
+6p1ewd.om5m45f26imnd7an   22h       2019-08-28T18:00:05+08:00   authentication,signing   kubelet-bootstrap-token   system:bootstrappers:k8s-master2
+l9yyz0.6g13y8ffsdab9lo5   22h       2019-08-28T18:00:05+08:00   authentication,signing   kubelet-bootstrap-token   system:bootstrappers:k8s-master3
+
+# 如果需要删除创建的token
+kubeadm token --kubeconfig ~/.kube/config delete l9yyz0.6g13y8ffsdab9lo5
+# 查看各token关联的secret
+kubectl get secrets  -n kube-system</code></pre><ol>
+<li><p>拷贝bootstrap kubeconfig文件到各个node机器上</p>
+<pre class=" language-sh"><code class="language-sh">ssh -n 192.168.1.35 "mkdir -p /etc/kubernetes/ssl && exit"
+scp kubelet-bootstrap-k8s-master1.kubeconfig 192.168.1.35:/etc/kubernetes/ssl/kubelet-bootstrap.kubeconfig
+scp kubelet-bootstrap-k8s-master2.kubeconfig 192.168.1.35:/etc/kubernetes/ssl/kubelet-bootstrap.kubeconfig
+scp kubelet-bootstrap-k8s-master3.kubeconfig 192.168.1.35:/etc/kubernetes/ssl/kubelet-bootstrap.kubeconfig</code></pre>
+</li>
+<li><p>创建kubelet配置文件</p>
+<pre class=" language-sh"><code class="language-sh">cd /root/ssl
+cat > kubelet.config.json <<EOF
+{
+"kind": "KubeletConfiguration",
+"apiVersion": "kubelet.config.k8s.io/v1beta1",
+"authentication": {
+ "x509": {
+   "clientCAFile": "/etc/kubernetes/ssl/ca.pem"
+ },
+ "webhook": {
+   "enabled": true,
+   "cacheTTL": "2m0s"
+ },
+ "anonymous": {
+   "enabled": false
+ }
+},
+"authorization": {
+ "mode": "Webhook",
+ "webhook": {
+   "cacheAuthorizedTTL": "5m0s",
+   "cacheUnauthorizedTTL": "30s"
+ }
+},
+"address": "192.168.1.35",
+"port": 10250,
+"readOnlyPort": 0,
+"cgroupDriver": "cgroupfs",
+"hairpinMode": "promiscuous-bridge",
+"serializeImagePulls": false,
+"featureGates": {
+ "RotateKubeletClientCertificate": true,
+ "RotateKubeletServerCertificate": true
+},
+"clusterDomain": "cluster.local",
+"clusterDNS": ["10.254.0.2"]
+}
+EOF</code></pre>
+</li>
+<li><p>拷贝到其他主机,注意，可以修改address为本机IP地址</p>
+<pre class=" language-sh"><code class="language-sh">cp kubelet.config.json /etc/kubernetes/ssl
+scp kubelet.config.json 192.168.1.35:/etc/kubernetes/ssl</code></pre>
+</li>
+<li><p>创建kubelet.service文件(worker节点)</p>
+<pre class=" language-sh"><code class="language-sh">mkdir -p /var/log/kubernetes && mkdir -p /var/lib/kubelet
+cat <<EOF > /etc/systemd/system/kubelet.service 
+[Unit]
+Description=Kubernetes Kubelet
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+After=docker.service
+Requires=docker.service
+</code></pre>
+</li>
+</ol>
+<p>[Service]<br>WorkingDirectory=/var/lib/kubelet<br>ExecStart=/usr/local/bin/kubelet <br>  –bootstrap-kubeconfig=/etc/kubernetes/ssl/kubelet-bootstrap.kubeconfig <br>  –cert-dir=/etc/kubernetes/ssl <br>  –network-plugin=cni <br>  –cni-conf-dir=/etc/cni/net.d <br>  –cni-bin-dir=/usr/local/bin/ <br>  –fail-swap-on=false <br>  –kubeconfig=/etc/kubernetes/ssl/kubelet-bootstrap.kubeconfig <br>  –config=/etc/kubernetes/ssl/kubelet.config.json <br>  –hostname-override=192.168.1.35 <br>  –pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google_containers/pause-amd64:3.1 <br>  –allow-privileged=true <br>  –alsologtostderr=true <br>  –logtostderr=false <br>  –cgroup-driver=systemd <br>  –log-dir=/var/log/kubernetes <br>  –v=2<br>Restart=on-failure<br>RestartSec=5</p>
+<p>[Install]<br>WantedBy=multi-user.target<br>EOF</p>
+<pre><code>***Bootstrap Token Auth 和授予权限 ,需要先将bootstrap-token文件中的kubelet-bootstrap用户赋予system:node-bootstrapper角色，然后kubelet才有权限创建认证请求***
+```sh
+kubectl create clusterrolebinding kubelet-bootstrap --clusterrole=system:node-bootstrapper --group=system:bootstrappers</code></pre><ol>
+<li><p>启动kubele服务</p>
+<pre class=" language-sh"><code class="language-sh">systemctl daemon-reload && systemctl enable kubelet && systemctl restart kubelet && systemctl status kubelet</code></pre>
+</li>
+<li><p>检查服务</p>
+<pre class=" language-sh"><code class="language-sh">netstat -lantp|grep kubelet
+# 通过kubelet 的TLS 证书请求，kubelet 首次启动时向kube-apiserver 发送证书签名请求，必须通过后kubernetes 系统才会将该 Node 加入到集群。查看未授权的CSR 请求
+kubectl get csr
+NAME                                                   AGE   REQUESTOR                 CONDITION
+node-csr-F0yftUyMpWGyDFRPUoGfF5XgbtPFEfyakLidUu9GY6c   99m   system:bootstrap:balnwx   Pending</code></pre>
+</li>
+<li><p>approve kubelet csr请求(手动和自动选其一)</p>
+</li>
+</ol>
+<p>1.手动approve csr请求(推荐自动的方式)</p>
+<pre class=" language-sh"><code class="language-sh">kubectl certificate approve node-csr-YNCI2r5QgwPTj4JR7X0VswSR0klbgG2rZ6R7rb_NIcs
+#显示
+certificatesigningrequest.certificates.k8s.io/node-csr-YNCI2r5QgwPTj4JR7X0VswSR0klbgG2rZ6R7rb_NIcs approved
+#查看结果
+kubectl describe csr node-csr-YNCI2r5QgwPTj4JR7X0VswSR0klbgG2rZ6R7rb_NIcs
+Name:               node-csr-YNCI2r5QgwPTj4JR7X0VswSR0klbgG2rZ6R7rb_NIcs
+Labels:             <none>
+Annotations:        <none>
+CreationTimestamp:  Tue, 27 Aug 2019 17:23:29 +0800
+Requesting User:    system:bootstrap:balnwx
+Status:             Approved,Issued
+Subject:
+         Common Name:    system:node:192.168.1.35
+         Serial Number:  
+         Organization:   system:nodes
+Events:  <none>
+</code></pre>
+<p>2.自动approve csr请求方式</p>
+<pre class=" language-sh"><code class="language-sh">#创建ClusterRoleBinding，分别用于自动 approve client、renew client、renew server 证书
+cd /root/ssl
+cat > csr-crb.yaml <<EOF
+# Approve all CSRs for the group "system:bootstrappers"
+ kind: ClusterRoleBinding
+ apiVersion: rbac.authorization.k8s.io/v1
+ metadata:
+   name: auto-approve-csrs-for-group
+ subjects:
+ - kind: Group
+   name: system:bootstrappers
+   apiGroup: rbac.authorization.k8s.io
+ roleRef:
+   kind: ClusterRole
+   name: system:certificates.k8s.io:certificatesigningrequests:nodeclient
+   apiGroup: rbac.authorization.k8s.io
+---
+ # To let a node of the group "system:bootstrappers" renew its own credentials
+ kind: ClusterRoleBinding
+ apiVersion: rbac.authorization.k8s.io/v1
+ metadata:
+   name: node-client-cert-renewal
+ subjects:
+ - kind: Group
+   name: system:bootstrappers
+   apiGroup: rbac.authorization.k8s.io
+ roleRef:
+   kind: ClusterRole
+   name: system:certificates.k8s.io:certificatesigningrequests:selfnodeclient
+   apiGroup: rbac.authorization.k8s.io
+---
+# A ClusterRole which instructs the CSR approver to approve a node requesting a
+# serving cert matching its client cert.
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: approve-node-server-renewal-csr
+rules:
+- apiGroups: ["certificates.k8s.io"]
+  resources: ["certificatesigningrequests/selfnodeserver"]
+  verbs: ["create"]
+---
+ # To let a node of the group "system:nodes" renew its own server credentials
+ kind: ClusterRoleBinding
+ apiVersion: rbac.authorization.k8s.io/v1
+ metadata:
+   name: node-server-cert-renewal
+ subjects:
+ - kind: Group
+   name: system:nodes
+   apiGroup: rbac.authorization.k8s.io
+ roleRef:
+   kind: ClusterRole
+   name: approve-node-server-renewal-csr
+   apiGroup: rbac.authorization.k8s.io
+EOF
+
+#拷贝到其他master节点上
+cp csr-crb.yaml /etc/kubernetes/ssl
+scp csr-crb.yaml 192.168.1.32:/etc/kubernetes/ssl
+scp csr-crb.yaml 192.168.1.33:/etc/kubernetes/ssl
+#生效配置
+kubectl apply -f /etc/kubernetes/ssl/csr-crb.yaml</code></pre>
+<ol>
+<li>查看<br>```sh<br>kubectl get –all-namespaces -o wide nodes<br>NAME           STATUS   ROLES    AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION               CONTAINER-RUNTIME</li>
+<li>168.1.35   Ready    <none>   7m    v1.14.3   192.168.1.35   <none>        CentOS Linux 7 (Core)   3.10.0-957.27.2.el7.x86_64   docker://19.3.1<pre><code></code></pre></li>
+</ol>
+<h3 id="部署kube-proxy"><a href="#部署kube-proxy" class="headerlink" title="部署kube-proxy"></a>部署kube-proxy</h3><p>kube-proxy 运行在所有 worker 节点上，，它监听 apiserver 中 service 和 Endpoint 的变化情况，创建路由规则来进行服务负载均衡。</p>
+<ol>
+<li><p>创建kube-proxy证书</p>
+<pre class=" language-sh"><code class="language-sh">cd /root/ssl
+cat > kube-proxy-csr.json <<EOF
+{
+"CN": "system:kube-proxy",
+"key": {
+ "algo": "rsa",
+ "size": 2048
+},
+"names": [
+ {
+   "C": "CN",
+   "ST": "ShangHai",
+   "L": "ShangHai",
+   "O": "k8s",
+   "OU": "System"
+ }
+]
+}
+EOF</code></pre>
+</li>
+<li><p>生成证书和私钥</p>
+<pre class=" language-sh"><code class="language-sh">cfssl gencert -ca=ca.pem \
+-ca-key=ca-key.pem \
+-config=ca-config.json \
+-profile=kubernetes  kube-proxy-csr.json | cfssljson -bare kube-proxy</code></pre>
+</li>
+<li><p>创建kubeconfig文件</p>
+<pre class=" language-sh"><code class="language-sh">#1.设置集群参数
+kubectl config set-cluster kubernetes \
+--certificate-authority=ca.pem \
+--embed-certs=true \
+--server=https://192.168.1.10:8443 \
+--kubeconfig=kube-proxy.kubeconfig
+#2.设置客户端认证参数
+kubectl config set-credentials kube-proxy \
+--client-certificate=kube-proxy.pem \
+--client-key=kube-proxy-key.pem \
+--embed-certs=true \
+--kubeconfig=kube-proxy.kubeconfig
+#3.设置上下文参数
+kubectl config set-context default \
+--cluster=kubernetes \
+--user=kube-proxy \
+--kubeconfig=kube-proxy.kubeconfig
+#4.设置默认上下文
+kubectl config use-context default --kubeconfig=kube-proxy.kubeconfig</code></pre>
+</li>
+<li><p>拷贝到worker节点</p>
+<pre class=" language-sh"><code class="language-sh">scp kube-proxy*.pem kube-proxy.kubeconfig 192.168.1.35:/etc/kubernetes/ssl/</code></pre>
+</li>
+<li><p>创建kube-proxy配置文件</p>
+<pre class=" language-sh"><code class="language-sh">cd /root/ssl
+cat >kube-proxy.config.yaml <<EOF
+apiVersion: kubeproxy.config.k8s.io/v1alpha1
+bindAddress: 192.168.1.35
+clientConnection:
+kubeconfig: /etc/kubernetes/ssl/kube-proxy.kubeconfig
+clusterCIDR: 172.30.0.0/16
+healthzBindAddress: 192.168.1.35:10256
+hostnameOverride: 192.168.1.35
+kind: KubeProxyConfiguration
+metricsBindAddress: 192.168.1.35:10249
+mode: "ipvs"
+EOF</code></pre>
+</li>
+<li><p>拷贝到其他节点</p>
+<pre class=" language-sh"><code class="language-sh">scp kube-proxy.config.yaml 192.168.1.35:/etc/kubernetes/ssl/</code></pre>
+</li>
+<li><p>创建kube-proxy.service文件(worker节点)</p>
+<pre class=" language-sh"><code class="language-sh">cat << EOF > /etc/systemd/system/kube-proxy.service
+[Unit]
+Description=Kubernetes Kube-Proxy Server
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+After=network.target
+</code></pre>
+</li>
+</ol>
+<p>[Service]<br>WorkingDirectory=/var/lib/kube-proxy<br>ExecStart=/usr/local/bin/kube-proxy <br>  –config=/etc/kubernetes/ssl/kube-proxy.config.yaml <br>  –alsologtostderr=true <br>  –logtostderr=false <br>  –log-dir=/var/log/kubernetes/kube-proxy <br>  –v=2<br>Restart=on-failure<br>RestartSec=5<br>LimitNOFILE=65536</p>
+<p>[Install]<br>WantedBy=multi-user.target<br>EOF</p>
+<pre><code>
+1. 启动kube-proxy服务(worker节点)
+```sh
+mkdir -p /var/lib/kube-proxy &amp;&amp; mkdir -p /var/log/kubernetes/kube-proxy
+systemctl daemon-reload &amp;&amp; systemctl enable kube-proxy &amp;&amp; systemctl restart kube-proxy &amp;&amp; systemctl status kube-proxy</code></pre><ol>
+<li>检查<pre class=" language-sh"><code class="language-sh">netstat -lnpt|grep kube-proxy
+tcp        0      0 192.168.1.35:10249      0.0.0.0:*               LISTEN      1031/kube-proxy     
+tcp        0      0 192.168.1.35:10256      0.0.0.0:*               LISTEN      1031/kube-proxy  
+</code></pre>
+</li>
+</ol>
+<p>ipvsadm -ln<br>#显示如下<br>IP Virtual Server version 1.2.1 (size=4096)<br>Prot LocalAddress:Port Scheduler Flags<br>  -&gt; RemoteAddress:Port           Forward Weight ActiveConn InActConn<br>TCP  10.254.0.1:443 rr<br>  -&gt; 192.168.1.31:6443            Masq    1      0          0<br>  -&gt; 192.168.1.32:6443            Masq    1      0          0<br>  -&gt; 192.168.1.33:6443            Masq    1      0          0<br>TCP  10.254.189.67:80 rr<br>  -&gt; 172.30.87.3:80               Masq    1      0          0</p>
+<pre><code>
+1. 测试集群可用性
+```sh
+#创建一个pod
+kubectl run nginx --image=nginx
+#查看pod状态
+kubectl get pod -o wide
+NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+nginx-7db9fccd9b-glrx5   1/1     Running   0          27m   172.30.87.3   192.168.1.35   &lt;none&gt;           &lt;none&gt;
+#测试IP是否ping通
+ping -c4 172.30.87.3
+PING 172.30.87.3 (172.30.87.3) 56(84) bytes of data.
+64 bytes from 172.30.87.3: icmp_seq=1 ttl=63 time=0.372 ms
+64 bytes from 172.30.87.3: icmp_seq=2 ttl=63 time=0.188 ms
+64 bytes from 172.30.87.3: icmp_seq=3 ttl=63 time=0.160 ms
+64 bytes from 172.30.87.3: icmp_seq=4 ttl=63 time=0.169 ms
+
+--- 172.30.87.3 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 2999ms
+rtt min/avg/max/mdev = 0.160/0.222/0.372/0.087 ms
+#创建服务
+kubectl expose deployment nginx --name=nginx --port=80 --target-port=80 --type=NodePort
+service/nginx exposed
+#查看服务
+kubectl get svc -o wide
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE    SELECTOR
+kubernetes   ClusterIP   10.254.0.1      &lt;none&gt;        443/TCP        2d1h   &lt;none&gt;
+nginx        NodePort    10.254.215.97   &lt;none&gt;        80:31401/TCP   31s    run=nginx
+#访问curl访问node_ip：nodeport
+curl -I 192.168.1.35:31401
+HTTP/1.1 200 OK
+Server: nginx/1.17.3
+Date: Wed, 28 Aug 2019 10:06:40 GMT
+Content-Type: text/html
+Content-Length: 612
+Last-Modified: Tue, 13 Aug 2019 08:50:00 GMT
+Connection: keep-alive
+ETag: &quot;5d5279b8-264&quot;
+Accept-Ranges: bytes
+#在flannel worker主机上访问集群IP
+ip add | grep 10.254
+    inet 10.254.0.1/32 brd 10.254.0.1 scope global kube-ipvs0
+    inet 10.254.189.67/32 brd 10.254.189.67 scope global kube-ipvs0
+    inet 10.254.215.97/32 brd 10.254.215.97 scope global kube-ipvs0
+
+curl -I http://10.254.189.67:80
+HTTP/1.1 200 OK
+Server: nginx/1.17.3
+Date: Wed, 28 Aug 2019 10:10:26 GMT
+Content-Type: text/html
+Content-Length: 612
+Last-Modified: Tue, 13 Aug 2019 08:50:00 GMT
+Connection: keep-alive
+ETag: &quot;5d5279b8-264&quot;
+Accept-Ranges: bytes</code></pre><h2 id="部署coredns插件"><a href="#部署coredns插件" class="headerlink" title="部署coredns插件"></a>部署coredns插件</h2><p>插件是集群的附件组件，丰富和完善了集群的功能</p>
+<pre class=" language-sh"><code class="language-sh">#将kubernetes-server-linux-amd64.tar.gz解压后，再解压其中的 kubernetes-src.tar.gz 文件,获取coredns配置文件
+tar -zxvf kubernetes-server-linux-amd64.tar.gz
+cd kubernetes
+mkdir src
+tar -zxvf kubernetes-src.tar.gz -C src
+cd src/cluster/addons/dns/coredns
+cp coredns.yaml.base /etc/kubernetes/coredns.yaml
+sed -i "s/__PILLAR__DNS__DOMAIN__/cluster.local/g" /etc/kubernetes/coredns.yaml
+sed -i "s/__PILLAR__DNS__SERVER__/10.254.0.2/g" /etc/kubernetes/coredns.yaml
+
+#创建coredns
+kubectl create -f /etc/kubernetes/coredns.yaml
+serviceaccount/coredns created
+clusterrole.rbac.authorization.k8s.io/system:coredns created
+clusterrolebinding.rbac.authorization.k8s.io/system:coredns created
+configmap/coredns created
+deployment.apps/coredns created
+service/kube-dns created
+#检查codedns功能
+kubectl -n kube-system get all -o wide
+NAME                           READY   STATUS             RESTARTS   AGE     IP            NODE           NOMINATED NODE   READINESS GATES
+pod/coredns-5b969f4c88-7l7c9   0/1     ImagePullBackOff   0          4m18s   172.30.87.4   192.168.1.35   <none>           <none>
+
+NAME               TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)                  AGE     SELECTOR
+service/kube-dns   ClusterIP   10.254.0.2   <none>        53/UDP,53/TCP,9153/TCP   4m18s   k8s-app=kube-dns
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                     SELECTOR
+deployment.apps/coredns   0/1     1            0           4m18s   coredns      k8s.gcr.io/coredns:1.3.1   k8s-app=kube-dns
+
+NAME                                 DESIRED   CURRENT   READY   AGE     CONTAINERS   IMAGES                     SELECTOR
+replicaset.apps/coredns-5b969f4c88   1         1         0       4m18s   coredns      k8s.gcr.io/coredns:1.3.1   k8s-app=kube-dns,pod-template-hash=5b969f4c88
+# ImagePullBackOff 镜像下载失败，修改
+sed -i "s/k8s.gcr.io/coredns/g" /etc/kubernetes/coredns.yaml
+kubectl apply -f /etc/kubernetes/coredns.yaml   
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+serviceaccount/coredns configured
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+clusterrole.rbac.authorization.k8s.io/system:coredns configured
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+clusterrolebinding.rbac.authorization.k8s.io/system:coredns configured
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+configmap/coredns configured
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+deployment.apps/coredns configured
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+service/kube-dns configured
+# 再次查看
+kubectl -n kube-system get all -o wide</code></pre>
+<h2 id="部署dashboard插件"><a href="#部署dashboard插件" class="headerlink" title="部署dashboard插件"></a>部署dashboard插件</h2><p>将kubernetes-server-linux-amd64.tar.gz 解压后，再解压其中的 kubernetes-src.tar.gz 文件。dashboard 对应的目录是：cluster/addons/dashboard ，拷贝dashboard的文件</p>
+<pre class=" language-sh"><code class="language-sh">#配置文件
+cd kubernetes/src/cluster/addons/dashboard
+mkdir -p /etc/kubernetes/dashboard
+cp *.yaml /etc/kubernetes/dashboard/
+
+cd /etc/kubernetes/dashboard
+sed -i "s@image:.*@image: registry.cn-hangzhou.aliyuncs.com/google_containers/kubernetes-dashboard-amd64:v1.10.1@g" dashboard-controller.yaml
+sed -i "/spec/a\  type: NodePort" dashboard-service.yaml
+sed -i "/targetPort/a\    nodePort: 32700" dashboard-service.yaml
+
+#执行所有
+kubectl create -f /etc/kubernetes/dashboard
+configmap/kubernetes-dashboard-settings created
+serviceaccount/kubernetes-dashboard created
+deployment.apps/kubernetes-dashboard created
+role.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+secret/kubernetes-dashboard-certs created
+secret/kubernetes-dashboard-key-holder created
+service/kubernetes-dashboard created
+#查看分配的NodePort
+kubectl -n kube-system get all -o wide
+
+kubectl get pod -o wide -n kube-system      
+NAME                                    READY   STATUS    RESTARTS   AGE    IP            NODE           NOMINATED NODE   READINESS GATES
+coredns-8854569d4-7w7gb                 1/1     Running   0          21m    172.30.87.5   192.168.1.35   <none>           <none>
+kubernetes-dashboard-7d5f7c58f5-c5nxc   1/1     Running   0          3m6s   172.30.87.7   192.168.1.35   <none>           <none>
+kubectl get svc -o wide -n kube-system 
+NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                  AGE     SELECTOR
+kube-dns               ClusterIP   10.254.0.2       <none>        53/UDP,53/TCP,9153/TCP   28m     k8s-app=kube-dns
+kubernetes-dashboard   NodePort    10.254.219.188   <none>        443:32700/TCP            3m13s   k8s-app=kubernetes-dashboard
+#此时可访问dashboard https://192.168.1.35:32700，但需要口令，使用帮助命令
+kubectl exec -n kube-system -it kubernetes-dashboard-7d5f7c58f5-c5nxc -- /dashboard --help
+
+
+#创建登录token
+kubectl create sa dashboard-admin -n kube-system
+serviceaccount/dashboard-admin created
+
+kubectl create clusterrolebinding dashboard-admin --clusterrole=cluster-admin --serviceaccount=kube-system:dashboard-admin
+clusterrolebinding.rbac.authorization.k8s.io/dashboard-admin created
+
+ADMIN_SECRET=$(kubectl get secrets -n kube-system | grep dashboard-admin | awk '{print $1}')
+DASHBOARD_LOGIN_TOKEN=$(kubectl describe secret -n kube-system ${ADMIN_SECRET} | grep -E '^token' | awk '{print $2}')
+echo ${DASHBOARD_LOGIN_TOKEN} # 使用输出的DASHBOARD_LOGIN_TOKEN登录</code></pre>
+<p><a href="https://www.cnblogs.com/fan-gx/p/11108276.html" target="_blank" rel="noopener"><strong>本文来源参照</strong></a>  <a href="https://www.cnblogs.com/fan-gx/p/11108276.html" target="_blank" rel="noopener"><strong>本文来源参照</strong></a>  <a href="https://www.cnblogs.com/fan-gx/p/11108276.html" target="_blank" rel="noopener"><strong>本文来源参照</strong></a></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ngames-dev.cn" rel="external nofollow noreferrer">SakuraGaara</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ngames-dev.cn/2019/08/25/2019-08-25-%E4%BA%8C%E8%BF%9B%E5%88%B6k8s%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">https://ngames-dev.cn/2019/08/25/2019-08-25-%E4%BA%8C%E8%BF%9B%E5%88%B6k8s%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://ngames-dev.cn" target="_blank">SakuraGaara</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/kubernetes/">
+                                    <span class="chip bg-color">kubernetes</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/10/10/2019-10-10-etcd%E7%94%A8%E6%88%B7%E5%8F%8A%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="etcd用户及角色权限">
+                        
+                        <span class="card-title">etcd用户及角色权限</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+etcd用户和角色设置：1.etcd默认没有用户2.etcd默认角色guest和root3.etcd默认关闭用户登录认证
+
+
+
+创建root用户etcdctl user add root查看用户etcdctl user list开启/关闭
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/etcd/" class="post-category">
+                                    etcd
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/etcd/">
+                        <span class="chip bg-color">etcd</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/07/02/2019-07-02-hive%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="hive添加用户权限">
+                        
+                        <span class="card-title">hive添加用户权限</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+在前面hadoop+hive+hbase环境里面，hive部分简单的配置了基于MySQL的本地模式安装但是考虑到安全，需要给hive添加认证登陆而且，使用hive命令beeline链接hive，也是强行需要密码的
+
+在之前的hive-si
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hive/">
+                        <span class="chip bg-color">hive</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://ngames-dev.cn" target="_blank">SakuraGaara</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/SakuraGaara" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:mic0601@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://www.facebook.com/mic0601" class="tooltipped" target="_blank" data-tooltip="关注我的Facebook: https://www.facebook.com/mic0601" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=547088188" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 547088188" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+<a href="https://github.com/SakuraGaara" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
