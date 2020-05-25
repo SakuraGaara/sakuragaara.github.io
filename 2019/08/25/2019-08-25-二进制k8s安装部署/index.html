@@ -1089,7 +1089,7 @@ EOF
 </code></pre>
 </li>
 </ol>
-<p>cat &lt;<EOF > bootstrap-token.csv<br>$(head -c 32 /dev/urandom | base64),kubelet-bootstrap,10001,”system:kubelet-bootstrap”<br>EOF</p>
+<p>cat &lt;<EOF> bootstrap-token.csv<br>$(head -c 32 /dev/urandom | base64),kubelet-bootstrap,10001,”system:kubelet-bootstrap”<br>EOF</EOF></p>
 <pre><code>1. 将加密文件拷贝到其他master节点
 ```sh
 cp encryption-config.yaml bootstrap-token.csv /etc/kubernetes/ssl
@@ -1119,7 +1119,7 @@ tcp6       0      0 :::6443                 :::*                    LISTEN      
 </li>
 </ol>
 <p>kubectl cluster-info<br>Kubernetes master is running at <a href="https://192.168.1.10:8443" target="_blank" rel="noopener">https://192.168.1.10:8443</a><br>To further debug and diagnose cluster problems, use ‘kubectl cluster-info dump’.</p>
-<p>kubectl get all –all-namespaces<br>NAMESPACE   NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE<br>default     service/kubernetes   ClusterIP   10.254.0.1   <none>        443/TCP   6m44s</p>
+<p>kubectl get all –all-namespaces<br>NAMESPACE   NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE<br>default     service/kubernetes   ClusterIP   10.254.0.1   <none>        443/TCP   6m44s</none></p>
 <p>kubectl get componentstatuses<br>NAME                 STATUS      MESSAGE                                                                                     ERROR<br>scheduler            Unhealthy   Get <a href="http://127.0.0.1:10251/healthz" target="_blank" rel="noopener">http://127.0.0.1:10251/healthz</a>: dial tcp 127.0.0.1:10251: connect: connection refused<br>controller-manager   Unhealthy   Get <a href="http://127.0.0.1:10252/healthz" target="_blank" rel="noopener">http://127.0.0.1:10252/healthz</a>: dial tcp 127.0.0.1:10252: connect: connection refused<br>etcd-0               Healthy     {“health”:”true”}<br>etcd-1               Healthy     {“health”:”true”}<br>etcd-2               Healthy     {“health”:”true”}</p>
 <pre><code>
 ### 部署kube-controller-manager
@@ -1531,7 +1531,7 @@ scp csr-crb.yaml 192.168.1.33:/etc/kubernetes/ssl
 kubectl apply -f /etc/kubernetes/ssl/csr-crb.yaml</code></pre>
 <ol>
 <li>查看<br>```sh<br>kubectl get –all-namespaces -o wide nodes<br>NAME           STATUS   ROLES    AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION               CONTAINER-RUNTIME</li>
-<li>168.1.35   Ready    <none>   7m    v1.14.3   192.168.1.35   <none>        CentOS Linux 7 (Core)   3.10.0-957.27.2.el7.x86_64   docker://19.3.1<pre><code></code></pre></li>
+<li>168.1.35   Ready    <none>   7m    v1.14.3   192.168.1.35   <none>        CentOS Linux 7 (Core)   3.10.0-957.27.2.el7.x86_64   docker://19.3.1<pre><code></code></pre></none></none></li>
 </ol>
 <h3 id="部署kube-proxy"><a href="#部署kube-proxy" class="headerlink" title="部署kube-proxy"></a>部署kube-proxy</h3><p>kube-proxy 运行在所有 worker 节点上，，它监听 apiserver 中 service 和 Endpoint 的变化情况，创建路由规则来进行服务负载均衡。</p>
 <ol>
