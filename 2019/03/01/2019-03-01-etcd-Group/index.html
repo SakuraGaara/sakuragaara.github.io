@@ -809,23 +809,28 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/03/07/2019-03-07-Homebrew%E6%BA%90%E6%9B%BF%E6%8D%A2%E5%8F%8A%E9%87%8D%E7%BD%AE/">
+                <a href="/2019/03/07/2019-03-07-kafka/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Homebrew源替换及重置">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="kafka docker-compose">
                         
-                        <span class="card-title">Homebrew源替换及重置</span>
+                        <span class="card-title">kafka docker-compose</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            替换- 替换brew.git:
-cd &quot;$(brew --repo)&quot;
-git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+                            单实例
+docker-compose启动  
 
-- 替换homebr
+version: '2'
+
+services:
+  zoo1:
+    image: wurstmeister/zookeeper
+    restart: unless-stopped
+  
                         
                     </div>
                     <div class="publish-info">
@@ -836,8 +841,8 @@ git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Homebrew/" class="post-category">
-                                    Homebrew
+                            <a href="/categories/kafka/" class="post-category">
+                                    kafka
                                 </a>
                             
                             
@@ -847,12 +852,12 @@ git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Homebrew/">
-                        <span class="chip bg-color">Homebrew</span>
+                    <a href="/tags/docker-compose/">
+                        <span class="chip bg-color">docker compose</span>
                     </a>
                     
-                    <a href="/tags/%E6%BA%90/">
-                        <span class="chip bg-color">源</span>
+                    <a href="/tags/kafka/">
+                        <span class="chip bg-color">kafka</span>
                     </a>
                     
                 </div>
