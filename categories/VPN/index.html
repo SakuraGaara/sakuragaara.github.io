@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.html" title="SakuraGaara" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="SakuraGaara" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -101,6 +101,17 @@
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
     </a>
     
   </li>
@@ -193,6 +204,17 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
 		</a>
           
         </li>
@@ -317,7 +339,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    // $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
+    // $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
     $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
 
@@ -348,29 +370,20 @@
                 </a>
                 
                 
-                <a href="/categories/docker-compose/" title="docker compose: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">docker compose
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/etcd/" title="etcd: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">etcd
+                            style="background-color: #F5EEF8;">etcd
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Homebrew/" title="Homebrew: 1">
+                <a href="/categories/docker-compose/" title="docker compose: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">Homebrew
-                        <span class="tag-length">1</span>
+                            style="background-color: #D5F5E3;">docker compose
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -378,7 +391,16 @@
                 <a href="/categories/kafka/" title="kafka: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">kafka
+                            style="background-color: #E8F8F5;">kafka
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Homebrew/" title="Homebrew: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">Homebrew
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -402,28 +424,10 @@
                 </a>
                 
                 
-                <a href="/categories/Flask/" title="Flask: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D7BDE2;">Flask
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/VPN/" title="VPN: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #A3E4D7;">VPN
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Nginx/" title="Nginx: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #85C1E9;">Nginx
+                            style="background-color: #D7BDE2;">Nginx
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -432,7 +436,25 @@
                 <a href="/categories/%E5%AE%89%E5%85%A8/" title="安全: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8C471;">安全
+                            style="background-color: #A3E4D7;">安全
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Flask/" title="Flask: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #85C1E9;">Flask
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/VPN/" title="VPN: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #F8C471;">VPN
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -447,15 +469,6 @@
                 </a>
                 
                 
-                <a href="/categories/nginx/" title="nginx: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #FEF9E7;">nginx
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" title="大数据: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -465,19 +478,28 @@
                 </a>
                 
                 
-                <a href="/categories/Jenkins/" title="Jenkins: 1">
+                <a href="/categories/wtforms/" title="wtforms: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D7BDE2;">Jenkins
+                            style="background-color: #FEF9E7;">wtforms
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/wtforms/" title="wtforms: 1">
+                <a href="/categories/nginx/" title="nginx: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">wtforms
+                            style="background-color: #FEF9E7;">nginx
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Jenkins/" title="Jenkins: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D7BDE2;">Jenkins
                         <span class="tag-length">1</span>
                     </span>
                 </a>

@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.html" title="SakuraGaara" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="SakuraGaara" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -101,6 +101,17 @@
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
     </a>
     
   </li>
@@ -193,6 +204,17 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
 		</a>
           
         </li>
@@ -375,17 +397,17 @@
         display: block;
     }
 
-    .toc-fixed .toc-link::before{
-        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
-    }
+#    .toc-fixed .toc-link::before{
+#        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+#    }
 
     #toc-content .is-active-link {
         color: #42b983;
     }
 
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
+#    #toc-content .is-active-link::before {
+#        background-color: #42b983;
+#    }
 
     #floating-toc-btn {
         position: fixed;
@@ -1078,61 +1100,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2020/05/21/2020-05-21-kubeadm%E5%AE%89%E8%A3%85/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="kubeadm安装">
-                        
-                        <span class="card-title">kubeadm安装</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            环境介绍：192.168.1.20 k8s-master192.168.1.21 k8s-node01192.168.1.22 k8s-node02
-安装前配置主机网络桥接设置cat /proc/sys/net/bridge/bridge-
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/kubeadm/" class="post-category">
-                                    kubeadm
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/kubernetes/">
-                        <span class="chip bg-color">kubernetes</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/">
                     <div class="card-image">
@@ -1151,9 +1121,9 @@ volumes当Pod中的目录，映射到宿主机时https://github.com/SakuraGaara/
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1171,6 +1141,60 @@ volumes当Pod中的目录，映射到宿主机时https://github.com/SakuraGaara/
                     
                     <a href="/tags/kubernetes/">
                         <span class="chip bg-color">kubernetes</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/02/2020-01-02-Flask%E7%AC%94%E8%AE%B0-sqlalchemy%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E6%8F%90%E4%BA%A4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Flask笔记-SQLAlchemy应用">
+                        
+                        <span class="card-title">Flask笔记-SQLAlchemy应用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            通常情况下，一个简单的注册试图
+from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy()
+
+class User(db.Model):
+    id = Column(Integer
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/wtforms/" class="post-category">
+                                    wtforms
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/wtforms/">
+                        <span class="chip bg-color">wtforms</span>
                     </a>
                     
                 </div>

@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.html" title="SakuraGaara" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="SakuraGaara" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -101,6 +101,17 @@
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
     </a>
     
   </li>
@@ -193,6 +204,17 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
 		</a>
           
         </li>
@@ -375,17 +397,17 @@
         display: block;
     }
 
-    .toc-fixed .toc-link::before{
-        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
-    }
+#    .toc-fixed .toc-link::before{
+#        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+#    }
 
     #toc-content .is-active-link {
         color: #42b983;
     }
 
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
+#    #toc-content .is-active-link::before {
+#        background-color: #42b983;
+#    }
 
     #floating-toc-btn {
         position: fixed;
@@ -417,12 +439,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hadoop/">
-                                <span class="chip bg-color">hadoop</span>
-                            </a>
-                        
                             <a href="/tags/hive/">
                                 <span class="chip bg-color">hive</span>
+                            </a>
+                        
+                            <a href="/tags/hadoop/">
+                                <span class="chip bg-color">hadoop</span>
                             </a>
                         
                             <a href="/tags/hbase/">
@@ -470,10 +492,12 @@
 <p>相关软件准备 apache-hive-2.3.5-bin.tar.gz  hadoop-2.7.7.tar.gz  hbase-1.3.5-bin.tar.gz  mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz  mysql-connector-java-5.1.42-bin.jar  zookeeper-3.4.14.tar.gz</p>
 </blockquote>
 <h3 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h3><ol>
-<li>准备三台服务器，修改hostname主机名，分别为master, slave1, slave2,并将三台主机名添加到/etc/hosts中<br>```sh</li>
-<li>27.214.15 slave1</li>
-<li>26.234.215 slave2</li>
-<li>26.108.150 master<br>```</li>
+<li>准备三台服务器，修改hostname主机名，分别为master, slave1, slave2,并将三台主机名添加到/etc/hosts中</li>
+</ol>
+<blockquote>
+<p>10.27.214.15 slave1<br>  10.26.234.215 slave2<br>  10.26.108.150 master</p>
+</blockquote>
+<ol start="2">
 <li>准备好相关的安装目录，mkdir /yibao/data/app (所有的项目都会安装在次目录下)</li>
 <li>配置三台服务器之间无密码登陆<a id="more"></a>
 
@@ -943,12 +967,12 @@ bin/start-hbase.sh</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hadoop/">
-                                    <span class="chip bg-color">hadoop</span>
-                                </a>
-                            
                                 <a href="/tags/hive/">
                                     <span class="chip bg-color">hive</span>
+                                </a>
+                            
+                                <a href="/tags/hadoop/">
+                                    <span class="chip bg-color">hadoop</span>
                                 </a>
                             
                                 <a href="/tags/hbase/">

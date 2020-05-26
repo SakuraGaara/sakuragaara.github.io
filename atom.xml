@@ -3,10 +3,10 @@
   <title>SakuraGaara</title>
   
   <subtitle>SakuraGaara</subtitle>
-  <link href="/atom.html" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="https://ngames-dev.cn/"/>
-  <updated>2020-05-22T09:54:22.349Z</updated>
+  <updated>2020-05-22T09:13:03.553Z</updated>
   <id>https://ngames-dev.cn/</id>
   
   <author>
@@ -17,17 +17,21 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>kubeadm安装</title>
-    <link href="https://ngames-dev.cn/2020/05/21/2020-05-21-kubeadm%E5%AE%89%E8%A3%85/"/>
-    <id>https://ngames-dev.cn/2020/05/21/2020-05-21-kubeadm%E5%AE%89%E8%A3%85/</id>
+    <title>k8s局部应用</title>
+    <link href="https://ngames-dev.cn/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/"/>
+    <id>https://ngames-dev.cn/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/</id>
     <published>2020-05-20T16:00:00.000Z</published>
-    <updated>2020-05-22T09:54:22.349Z</updated>
+    <updated>2020-05-22T09:13:03.553Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;环境介绍：&quot;&gt;&lt;a href=&quot;#环境介绍：&quot; class=&quot;headerlink&quot; title=&quot;环境介绍：&quot;&gt;&lt;/a&gt;环境介绍：&lt;/h3&gt;&lt;p&gt;192.168.1.20 k8s-master&lt;br&gt;192.168.1.21 k8s-node01&lt;br&gt;192.
+        
+        
+          &lt;p&gt;一个完成的Deployment&lt;/p&gt;
+&lt;h4 id=&quot;volumes&quot;&gt;&lt;a href=&quot;#volumes&quot; class=&quot;headerlink&quot; title=&quot;volumes&quot;&gt;&lt;/a&gt;volumes&lt;/h4&gt;&lt;p&gt;当Pod中的目录，映射到宿主机时&lt;br&gt;&lt;a
+        
       
     
     </summary>
@@ -41,18 +45,20 @@
   </entry>
   
   <entry>
-    <title>k8s局部应用</title>
-    <link href="https://ngames-dev.cn/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/"/>
-    <id>https://ngames-dev.cn/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/</id>
+    <title>kubeadm安装</title>
+    <link href="https://ngames-dev.cn/2020/05/21/2020-05-21-kubeadm%E5%AE%89%E8%A3%85/"/>
+    <id>https://ngames-dev.cn/2020/05/21/2020-05-21-kubeadm%E5%AE%89%E8%A3%85/</id>
     <published>2020-05-20T16:00:00.000Z</published>
-    <updated>2020-05-22T09:13:03.553Z</updated>
+    <updated>2020-05-25T08:35:14.713Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;一个完成的Deployment&lt;/p&gt;
-&lt;h4 id=&quot;volumes&quot;&gt;&lt;a href=&quot;#volumes&quot; class=&quot;headerlink&quot; title=&quot;volumes&quot;&gt;&lt;/a&gt;volumes&lt;/h4&gt;&lt;p&gt;当Pod中的目录，映射到宿主机时&lt;br&gt;&lt;a href
+        
+        
+          &lt;h3 id=&quot;环境介绍：&quot;&gt;&lt;a href=&quot;#环境介绍：&quot; class=&quot;headerlink&quot; title=&quot;环境介绍：&quot;&gt;&lt;/a&gt;环境介绍：&lt;/h3&gt;&lt;p&gt;192.168.1.20 k8s-master&lt;br&gt;192.168.1.21
+        
       
     
     </summary>
@@ -158,7 +164,7 @@ def register():
     <link href="https://ngames-dev.cn/2019/10/31/2019-10-31-Kubernetes%E6%9E%B6%E6%9E%84/"/>
     <id>https://ngames-dev.cn/2019/10/31/2019-10-31-Kubernetes%E6%9E%B6%E6%9E%84/</id>
     <published>2019-10-30T16:00:00.000Z</published>
-    <updated>2020-05-25T08:14:42.073Z</updated>
+    <updated>2020-05-25T08:35:17.117Z</updated>
     
     <summary type="html">
     
@@ -202,12 +208,12 @@ def register():
     <link href="https://ngames-dev.cn/2019/08/25/2019-08-25-%E4%BA%8C%E8%BF%9B%E5%88%B6k8s%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/"/>
     <id>https://ngames-dev.cn/2019/08/25/2019-08-25-%E4%BA%8C%E8%BF%9B%E5%88%B6k8s%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</id>
     <published>2019-08-24T16:00:00.000Z</published>
-    <updated>2020-05-22T07:53:26.798Z</updated>
+    <updated>2020-05-26T07:55:30.807Z</updated>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;所有操作全部用root使用者进行，高可用一般建议大于等于3台的奇数,我们使用3台master来做高可用&lt;br&gt;    &lt;strong&gt;k8s各版本组件下载地址:&lt;/strong&gt;&lt;br&gt;    &lt;a href=&quot;https://github.com/kubernetes/kubernetes/tree/v1.14.3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/kubernetes/kubernetes/tree/v1.14.3&lt;/a&gt;&lt;br&gt;    &lt;em&gt;kubernetes:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-node-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-node-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-client-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-client-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-server-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-server-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes.tar.gz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;etcd:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;flannel:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://github.com/coreos/flannel/releases/download/v0.11.0/flannel-v0.11.0-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/coreos/flannel/releases/download/v0.11.0/flannel-v0.11.0-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;cni-plugins:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;docker:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://download.docker.com/linux/static/stable/x86_64/docker-18.09.6.tgz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://download.docker.com/linux/static/stable/x86_64/docker-18.09.6.tgz&lt;/a&gt;&lt;br&gt;    &lt;em&gt;cfssl:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://pkg.cfssl.org/R1.2/cfssl_linux-amd64&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pkg.cfssl.org/R1.2/cfssl_linux-amd64&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64&lt;/a&gt;&lt;br&gt;    wget &lt;a href=&quot;https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64&lt;/a&gt;&lt;br&gt;    &lt;em&gt;heapster:&lt;/em&gt;&lt;br&gt;    wget &lt;a href=&quot;https://github.com/kubernetes-retired/heapster/archive/v1.5.4.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/kubernetes-retired/heapster/archive/v1.5.4.tar.gz&lt;/a&gt;  &lt;/p&gt;
+      &lt;h3 id=&quot;环境准备&quot;&gt;&lt;a href=&quot;#环境准备&quot; class=&quot;headerlink&quot; title=&quot;环境准备&quot;&gt;&lt;/a&gt;环境准备&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Centos7 所有操作全部用root使用者进行，高可用一般建议大于等于3台的奇数,我们使用3台master来做高可用&lt;br&gt;  &lt;strong&gt;k8s各版本组件下载地址:&lt;/strong&gt;&lt;br&gt;  &lt;a href=&quot;https://github.com/kubernetes/kubernetes/tree/v1.14.3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/kubernetes/kubernetes/tree/v1.14.3&lt;/a&gt;&lt;br&gt;  &lt;em&gt;kubernetes:&lt;/em&gt;&lt;br&gt;  wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-node-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-node-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;  wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-client-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-client-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;  wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-server-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes-server-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;  wget &lt;a href=&quot;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://storage.googleapis.com/kubernetes-release/release/v1.14.3/kubernetes.tar.gz&lt;/a&gt;&lt;br&gt;  &lt;em&gt;etcd:&lt;/em&gt;&lt;br&gt;  wget &lt;a href=&quot;https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/etcd-io/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;  &lt;em&gt;flannel:&lt;/em&gt;&lt;br&gt;  wget &lt;a href=&quot;https://github.com/coreos/flannel/releases/download/v0.11.0/flannel-v0.11.0-linux-amd64.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/coreos/flannel/releases/download/v0.11.0/flannel-v0.11.0-linux-amd64.tar.gz&lt;/a&gt;&lt;br&gt;  &lt;em&gt;cni-plugins:&lt;/em&gt;&lt;br&gt;  wget &lt;a href=&quot;https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz&lt;/a&gt;&lt;br&gt;  &lt;em&gt;docker:&lt;/em&gt;&lt;br&gt;  wget &lt;a href=&quot;https://download.docker.com/linux/static/stable/x86_64/docker-18.09.6.tgz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://download.docker.com/linux/static/stable/x86_64/docker-18.09.6.tgz&lt;/a&gt;&lt;br&gt;  &lt;em&gt;cfssl:&lt;/em&gt;&lt;br&gt;  wget &lt;a href=&quot;https://pkg.cfssl.org/R1.2/cfssl_linux-amd64&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pkg.cfssl.org/R1.2/cfssl_linux-amd64&lt;/a&gt;&lt;br&gt;  wget &lt;a href=&quot;https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64&lt;/a&gt;&lt;br&gt;  wget &lt;a href=&quot;https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64&lt;/a&gt;&lt;br&gt;  &lt;em&gt;heapster:&lt;/em&gt;&lt;br&gt;  wget &lt;a href=&quot;https://github.com/kubernetes-retired/heapster/archive/v1.5.4.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/kubernetes-retired/heapster/archive/v1.5.4.tar.gz&lt;/a&gt;  &lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -249,7 +255,7 @@ def register():
     <link href="https://ngames-dev.cn/2019/06/30/2019-06-30-hadoop+hive+hbase%E7%8E%AF%E5%A2%83/"/>
     <id>https://ngames-dev.cn/2019/06/30/2019-06-30-hadoop+hive+hbase%E7%8E%AF%E5%A2%83/</id>
     <published>2019-06-29T16:00:00.000Z</published>
-    <updated>2020-05-22T07:53:26.792Z</updated>
+    <updated>2020-05-26T02:54:04.172Z</updated>
     
     <summary type="html">
     
@@ -257,10 +263,12 @@ def register():
 &lt;p&gt;相关软件准备 apache-hive-2.3.5-bin.tar.gz  hadoop-2.7.7.tar.gz  hbase-1.3.5-bin.tar.gz  mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz  mysql-connector-java-5.1.42-bin.jar  zookeeper-3.4.14.tar.gz&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&quot;环境介绍&quot;&gt;&lt;a href=&quot;#环境介绍&quot; class=&quot;headerlink&quot; title=&quot;环境介绍&quot;&gt;&lt;/a&gt;环境介绍&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;准备三台服务器，修改hostname主机名，分别为master, slave1, slave2,并将三台主机名添加到/etc/hosts中&lt;br&gt;```sh&lt;/li&gt;
-&lt;li&gt;27.214.15 slave1&lt;/li&gt;
-&lt;li&gt;26.234.215 slave2&lt;/li&gt;
-&lt;li&gt;26.108.150 master&lt;br&gt;```&lt;/li&gt;
+&lt;li&gt;准备三台服务器，修改hostname主机名，分别为master, slave1, slave2,并将三台主机名添加到/etc/hosts中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;10.27.214.15 slave1&lt;br&gt;  10.26.234.215 slave2&lt;br&gt;  10.26.108.150 master&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&quot;2&quot;&gt;
 &lt;li&gt;准备好相关的安装目录，mkdir /yibao/data/app (所有的项目都会安装在次目录下)&lt;/li&gt;
 &lt;li&gt;配置三台服务器之间无密码登陆&lt;/li&gt;&lt;/ol&gt;
     
@@ -270,9 +278,9 @@ def register():
       <category term="大数据" scheme="https://ngames-dev.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     
-      <category term="hadoop" scheme="https://ngames-dev.cn/tags/hadoop/"/>
-    
       <category term="hive" scheme="https://ngames-dev.cn/tags/hive/"/>
+    
+      <category term="hadoop" scheme="https://ngames-dev.cn/tags/hadoop/"/>
     
       <category term="hbase" scheme="https://ngames-dev.cn/tags/hbase/"/>
     
@@ -316,10 +324,13 @@ def register():
     
       
       
-        &lt;blockquote&gt;
+        
+        
+          &lt;blockquote&gt;
 &lt;p&gt;kubectl客户端命令&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://sakuragaara.github.io/images/img/20190426/kubernetes-kubectl-cheatsheet.p
+&lt;p&gt;&lt;a
+        
       
     
     </summary>

@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.html" title="SakuraGaara" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="SakuraGaara" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -101,6 +101,17 @@
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
     </a>
     
   </li>
@@ -193,6 +204,17 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
 		</a>
           
         </li>
@@ -375,17 +397,17 @@
         display: block;
     }
 
-    .toc-fixed .toc-link::before{
-        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
-    }
+#    .toc-fixed .toc-link::before{
+#        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+#    }
 
     #toc-content .is-active-link {
         color: #42b983;
     }
 
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
+#    #toc-content .is-active-link::before {
+#        background-color: #42b983;
+#    }
 
     #floating-toc-btn {
         position: fixed;
@@ -772,8 +794,8 @@ Kubernete
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-所有操作全部用root使用者进行，高可用一般建议大于等于3台的奇数,我们使用3台master来做高可用    k8s各版本组件下载地址:    https://github.com/kubernetes/kubernetes/tree/v
+                            环境准备
+Centos7 所有操作全部用root使用者进行，高可用一般建议大于等于3台的奇数,我们使用3台master来做高可用  k8s各版本组件下载地址:  https://github.com/kubernetes/kubernete
                         
                     </div>
                     <div class="publish-info">

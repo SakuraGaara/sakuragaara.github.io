@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.html" title="SakuraGaara" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="SakuraGaara" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -101,6 +101,17 @@
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
     </a>
     
   </li>
@@ -193,6 +204,17 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
 		</a>
           
         </li>
@@ -375,17 +397,17 @@
         display: block;
     }
 
-    .toc-fixed .toc-link::before{
-        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
-    }
+#    .toc-fixed .toc-link::before{
+#        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+#    }
 
     #toc-content .is-active-link {
         color: #42b983;
     }
 
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
+#    #toc-content .is-active-link::before {
+#        background-color: #42b983;
+#    }
 
     #floating-toc-btn {
         position: fixed;
@@ -870,20 +892,19 @@ trade_gifts_model <span class="token operator">=</span> TradeInfo<span class="to
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/">
+                <a href="/2020/05/21/2020-05-21-kubeadm%E5%AE%89%E8%A3%85/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="k8s局部应用">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="kubeadm安装">
                         
-                        <span class="card-title">k8s局部应用</span>
+                        <span class="card-title">kubeadm安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一个完成的Deployment
-volumes当Pod中的目录，映射到宿主机时https://github.com/SakuraGaara/alpha/blob/master/alpha-deploy-dev.yaml#L33-L36htt
+                            kubeadm安装k8s方法，大致流程，安装比较简单！记录打卡～～～
                         
                     </div>
                     <div class="publish-info">

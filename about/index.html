@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.html" title="SakuraGaara" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="SakuraGaara" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -101,6 +101,17 @@
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
     </a>
     
   </li>
@@ -193,6 +204,17 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
 		</a>
           
         </li>
@@ -324,7 +346,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    // $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
+    // $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
     $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
 
@@ -587,7 +609,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"docker","value":5},{"name":"docker compose","value":2},{"name":"etcd","value":2},{"name":"Homebrew","value":1},{"name":"kafka","value":1},{"name":"kubernetes","value":8},{"name":"elasticsearch","value":2},{"name":"Flask","value":1},{"name":"VPN","value":1},{"name":"Nginx","value":1},{"name":"安全","value":1},{"name":"网易云","value":1},{"name":"nginx","value":1},{"name":"大数据","value":2},{"name":"Jenkins","value":1},{"name":"wtforms","value":1},{"name":"kubeadm","value":2}],
+                data: [{"name":"docker","value":5},{"name":"etcd","value":2},{"name":"docker compose","value":2},{"name":"kafka","value":1},{"name":"Homebrew","value":1},{"name":"kubernetes","value":8},{"name":"elasticsearch","value":2},{"name":"Nginx","value":1},{"name":"安全","value":1},{"name":"Flask","value":1},{"name":"VPN","value":1},{"name":"网易云","value":1},{"name":"大数据","value":2},{"name":"wtforms","value":1},{"name":"nginx","value":1},{"name":"Jenkins","value":1},{"name":"kubeadm","value":2}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -611,7 +633,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["kubernetes","docker","docker compose","etcd","elasticsearch","nginx","hive","harbor","ubuntu","docker-compose"]
+                data: ["kubernetes","docker","docker compose","etcd","elasticsearch","nginx","hive","ubuntu","harbor","docker-compose"]
             }
         ],
         yAxis: [
@@ -759,20 +781,14 @@
             
             
             
-            <a href="/tags/harbor/">
-                <span class="chip center-align waves-effect waves-light chip-default">harbor</span>
-            </a>
-            
-            
-            
             <a href="/tags/ubuntu/">
                 <span class="chip center-align waves-effect waves-light chip-default">ubuntu</span>
             </a>
             
             
             
-            <a href="/tags/docker-compose/">
-                <span class="chip center-align waves-effect waves-light chip-default">docker compose</span>
+            <a href="/tags/harbor/">
+                <span class="chip center-align waves-effect waves-light chip-default">harbor</span>
             </a>
             
             
@@ -789,6 +805,18 @@
             
             
             
+            <a href="/tags/docker-compose/">
+                <span class="chip center-align waves-effect waves-light chip-default">docker compose</span>
+            </a>
+            
+            
+            
+            <a href="/tags/kafka/">
+                <span class="chip center-align waves-effect waves-light chip-default">kafka</span>
+            </a>
+            
+            
+            
             <a href="/tags/Homebrew/">
                 <span class="chip center-align waves-effect waves-light chip-default">Homebrew</span>
             </a>
@@ -797,12 +825,6 @@
             
             <a href="/tags/%E6%BA%90/">
                 <span class="chip center-align waves-effect waves-light chip-default">源</span>
-            </a>
-            
-            
-            
-            <a href="/tags/kafka/">
-                <span class="chip center-align waves-effect waves-light chip-default">kafka</span>
             </a>
             
             
@@ -819,26 +841,14 @@
             
             
             
-            <a href="/tags/canal/">
-                <span class="chip center-align waves-effect waves-light chip-default">canal</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Flask/">
-                <span class="chip center-align waves-effect waves-light chip-default">Flask</span>
-            </a>
-            
-            
-            
             <a href="/tags/python/">
                 <span class="chip center-align waves-effect waves-light chip-default">python</span>
             </a>
             
             
             
-            <a href="/tags/vpn/">
-                <span class="chip center-align waves-effect waves-light chip-default">vpn</span>
+            <a href="/tags/canal/">
+                <span class="chip center-align waves-effect waves-light chip-default">canal</span>
             </a>
             
             
@@ -855,6 +865,18 @@
             
             
             
+            <a href="/tags/Flask/">
+                <span class="chip center-align waves-effect waves-light chip-default">Flask</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vpn/">
+                <span class="chip center-align waves-effect waves-light chip-default">vpn</span>
+            </a>
+            
+            
+            
             <a href="/tags/kubectl/">
                 <span class="chip center-align waves-effect waves-light chip-default">kubectl</span>
             </a>
@@ -867,14 +889,14 @@
             
             
             
-            <a href="/tags/hadoop/">
-                <span class="chip center-align waves-effect waves-light chip-default">hadoop</span>
+            <a href="/tags/hive/">
+                <span class="chip center-align waves-effect waves-light chip-default">hive</span>
             </a>
             
             
             
-            <a href="/tags/hive/">
-                <span class="chip center-align waves-effect waves-light chip-default">hive</span>
+            <a href="/tags/hadoop/">
+                <span class="chip center-align waves-effect waves-light chip-default">hadoop</span>
             </a>
             
             
@@ -885,14 +907,14 @@
             
             
             
-            <a href="/tags/Jenkins/">
-                <span class="chip center-align waves-effect waves-light chip-default">Jenkins</span>
+            <a href="/tags/wtforms/">
+                <span class="chip center-align waves-effect waves-light chip-default">wtforms</span>
             </a>
             
             
             
-            <a href="/tags/wtforms/">
-                <span class="chip center-align waves-effect waves-light chip-default">wtforms</span>
+            <a href="/tags/Jenkins/">
+                <span class="chip center-align waves-effect waves-light chip-default">Jenkins</span>
             </a>
             
             
