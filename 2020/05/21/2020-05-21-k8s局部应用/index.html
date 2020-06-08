@@ -40,7 +40,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/d11a7a60301b5fea64a4796faef7c375.jpeg" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">SakuraGaara</span>
                 </a>
@@ -139,7 +139,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/d11a7a60301b5fea64a4796faef7c375.jpeg" class="logo-img circle responsive-img">
         
         <div class="logo-name">SakuraGaara</div>
         <div class="logo-desc">
@@ -489,10 +489,11 @@
 </ul>
 <h4 id="imagePullSecrets"><a href="#imagePullSecrets" class="headerlink" title="imagePullSecrets"></a>imagePullSecrets</h4><p>私有镜像拉取,需要账号密码,可通过secret保存</p>
 <ul>
-<li>创建secret<br>```sh<br>kubectl create secret -n dev docker-registry ali-secret \</li>
-<li>-docker-username=xxxx@163.com \</li>
-<li>-docker-server=registry.cn-hangzhou.aliyun.com \</li>
-<li>-docker-password=xxxxxx<br>```</li>
+<li>创建secret<pre class=" language-sh"><code class="language-sh">kubectl create secret -n dev docker-registry ali-secret \
+  --docker-username=xxxx@163.com \
+  --docker-server=registry.cn-hangzhou.aliyun.com \
+  --docker-password=xxxxxx</code></pre>
+</li>
 <li>应用secret<br><a href="https://github.com/SakuraGaara/alpha/blob/master/base-deploy-dev.yaml#L27-L28" target="_blank" rel="noopener">https://github.com/SakuraGaara/alpha/blob/master/base-deploy-dev.yaml#L27-L28</a></li>
 </ul>
 <h4 id="ConfigMap"><a href="#ConfigMap" class="headerlink" title="ConfigMap"></a>ConfigMap</h4><p>有时候需要往Pod中添加一些配置，比如nginx.conf,则可以使用configmap</p>

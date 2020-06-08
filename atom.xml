@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ngames-dev.cn/"/>
-  <updated>2020-05-22T09:13:03.553Z</updated>
+  <updated>2020-05-28T02:47:24.811Z</updated>
   <id>https://ngames-dev.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ngames-dev.cn/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/"/>
     <id>https://ngames-dev.cn/2020/05/21/2020-05-21-k8s%E5%B1%80%E9%83%A8%E5%BA%94%E7%94%A8/</id>
     <published>2020-05-20T16:00:00.000Z</published>
-    <updated>2020-05-22T09:13:03.553Z</updated>
+    <updated>2020-05-28T02:47:24.811Z</updated>
     
     <summary type="html">
     
@@ -314,6 +314,31 @@ def register():
   </entry>
   
   <entry>
+    <title>Git Page添加网易云音乐</title>
+    <link href="https://ngames-dev.cn/2019/04/26/2019-04-26-Git%20Page%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
+    <id>https://ngames-dev.cn/2019/04/26/2019-04-26-Git%20Page%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</id>
+    <published>2019-04-25T16:00:00.000Z</published>
+    <updated>2020-05-22T07:53:26.784Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;添加到 &lt;code&gt;_post.html&lt;/code&gt; 合适的位置 &lt;/li&gt;
+&lt;li&gt;在写好的markdown文档的头文件中添加：&lt;code&gt;music-id: xxx&lt;/code&gt; 配置项。具体的id号就是选取的歌曲的外链中的id号。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;iframe frameborder=&amp;quot;no&amp;quot; border=&amp;quot;0&amp;quot; marginwidth=&amp;quot;0&amp;quot; marginheight=&amp;quot;0&amp;quot; width=330 height=86 src=&amp;quot;//music.163.com/outchain/player?type=2&amp;amp;id={ { page.music-id } }&amp;amp;auto=1&amp;amp;height=66&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="网易云" scheme="https://ngames-dev.cn/categories/%E7%BD%91%E6%98%93%E4%BA%91/"/>
+    
+    
+      <category term="网易云" scheme="https://ngames-dev.cn/tags/%E7%BD%91%E6%98%93%E4%BA%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一图掌握kubernetes客户端命令kubectl</title>
     <link href="https://ngames-dev.cn/2019/04/26/2019-04-26-%E4%B8%80%E5%9B%BE%E6%8E%8C%E6%8F%A1kubernetes%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%91%BD%E4%BB%A4kubectl/"/>
     <id>https://ngames-dev.cn/2019/04/26/2019-04-26-%E4%B8%80%E5%9B%BE%E6%8E%8C%E6%8F%A1kubernetes%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%91%BD%E4%BB%A4kubectl/</id>
@@ -342,31 +367,6 @@ def register():
       <category term="kubernetes" scheme="https://ngames-dev.cn/tags/kubernetes/"/>
     
       <category term="kubectl" scheme="https://ngames-dev.cn/tags/kubectl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git Page添加网易云音乐</title>
-    <link href="https://ngames-dev.cn/2019/04/26/2019-04-26-Git%20Page%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
-    <id>https://ngames-dev.cn/2019/04/26/2019-04-26-Git%20Page%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</id>
-    <published>2019-04-25T16:00:00.000Z</published>
-    <updated>2020-05-22T07:53:26.784Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;添加到 &lt;code&gt;_post.html&lt;/code&gt; 合适的位置 &lt;/li&gt;
-&lt;li&gt;在写好的markdown文档的头文件中添加：&lt;code&gt;music-id: xxx&lt;/code&gt; 配置项。具体的id号就是选取的歌曲的外链中的id号。  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;iframe frameborder=&amp;quot;no&amp;quot; border=&amp;quot;0&amp;quot; marginwidth=&amp;quot;0&amp;quot; marginheight=&amp;quot;0&amp;quot; width=330 height=86 src=&amp;quot;//music.163.com/outchain/player?type=2&amp;amp;id={ { page.music-id } }&amp;amp;auto=1&amp;amp;height=66&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="网易云" scheme="https://ngames-dev.cn/categories/%E7%BD%91%E6%98%93%E4%BA%91/"/>
-    
-    
-      <category term="网易云" scheme="https://ngames-dev.cn/tags/%E7%BD%91%E6%98%93%E4%BA%91/"/>
     
   </entry>
   
